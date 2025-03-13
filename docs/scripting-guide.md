@@ -1187,13 +1187,13 @@ All default constants (parameters definition...) are atuomatically imported.
 There were some missing ones that I had to invent names for (since I couldn't find a convention, and i had to keep the commands type-safe):
 
 
-ActionId  -1 -> actionid-any
+ActionId  -1 -> <mark>actionid-any</mark>
 
-OrderId -1 -> orderid-any
+OrderId -1 -> <mark>orderid-any</mark>
 
-AttackStance -1 -> stance-unchanged
+AttackStance -1 -> <mark>stance-unchanged</mark>
 
-Formation -1 -> formation-unchanged
+Formation -1 -> <mark>formation-unchanged</mark>
 
 
 ## Search states
