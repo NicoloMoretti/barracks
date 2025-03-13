@@ -1,10 +1,15 @@
 # Scripting guide
 
-### Requierements
-
-I will assume basic knowledge of '.per' scripting.
-
 ## Basics
+
+
+> [!WARNING]  
+> I will assume basic knowledge of '.per' scripting.
+
+> [!IMPORTANT]  
+> NEWLINE characters / '\n' are meaningful in barracks
+
+## Getting started
 
 Just like a .per file, a .brk (barracks file extension) is read top to bottom every 1/3 of a second, a .per file is mostly made of sequential defrules.
 
@@ -95,4 +100,8 @@ v
 
 ```
 
-You can safely assume it will work the same, if the condition of an 'if' statement is true, the body will be executed
+You can safely assume it will work the same: if the condition of an 'if' statement is true, the body will be executed
+
+Let's chat a number
+
+
