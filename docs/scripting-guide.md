@@ -7,7 +7,7 @@
 > I will assume basic knowledge of '.per' scripting.
 
 > [!IMPORTANT]  
-> NEWLINE characters / '\n' are meaningful in barracks. They are used to TERMINATE statements. Adding more than one new line between statements, however, is allowed and has no effect.
+> NEWLINE characters / '\n' are meaningful in Barracks. They are used to TERMINATE statements. Adding more than one new line between statements, however, is allowed and has no effect.
 
 > [!TIP]  
 > Whenever you think you are seeing real 'Barracks' code in the documentation, you can easily copy it and try it yourself, if you have Barracks set up.
@@ -335,7 +335,7 @@ Constants are considered as immutable read-only integers or strings of text, dep
 
 #### true/false values note
 
-Notice that until now we wrote (true) int the condition, but we could have also wrote 'true' without '()', as true/false are considered primitive values, just like the number (3) resolves to 3.
+Notice that until now we wrote (true) in the condition, but we could have also wrote 'true' without '()', as true/false are considered primitive values, just like the number (3) resolves to 3.
 
 I might also get to add proper boolean variables eventualy.
 
@@ -355,7 +355,7 @@ SNs can be easly read and modified by doing
 
 ## else
 
-Barracks introduces 'else' blocks
+Barracks introduces support for 'else' blocks
 
 ```text
 
@@ -653,9 +653,9 @@ This will skip the printing of "3"
 
 Variables have a 'scope'.
 
-For now we only say variables declared outside of blocks, in the 'global' scope.
+For now we only saw variables declared outside of blocks, in the 'global' scope.
 
-But we could have also declare variables inside a block:
+But we could have also declared variables inside a block:
 
 ```text
 
@@ -696,7 +696,7 @@ int gloabalVariable
 
 ```
 
-Global variables are the only ones that can save data between multiple scripts passes throghout the whole game.
+Global variables persist across multiple script, whereas local variables exist only within their respective blocks, and get 'freed' or 'destroyed when the block they were declared in ends.
 
 Local variables exists in the block they are declared in and its children blocks.
 
@@ -753,7 +753,7 @@ Inner variables can be declared and initialized in one line:
 ## disable-self
 
 
-disable-self is still here and has been upgraded to disable it's block and all of it's children block!
+disable-self is still here and has been upgraded to disable its block and all of its child blocks!
 
 It's been promoted to a keyword like 'return', 'break', 'continue', so it dropped it's parenthesis.
 
@@ -930,7 +930,7 @@ Commands still work mostly the same as .per.
 2. Second change:
 
   If the command used to change goals, now it doesn't, and instead resolves to a value
-  For exemple, (up-lerp-tiles <Point1> <Point2> <Value>) will not modify Point1.
+  For example, (up-lerp-tiles <Point1> <Point2> <Value>) will not modify Point1.
   
   If you whish to use the new calculated point, you can do:
   
