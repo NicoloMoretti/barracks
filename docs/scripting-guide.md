@@ -55,8 +55,11 @@ v
 
 ....
 
+```
 
 In Barracks regular "defrules" have been replaced by "if" blocks.
+
+```text
 
 They look like this:
 
@@ -102,6 +105,32 @@ v
 
 You can safely assume it will work the same: if the condition of an 'if' statement is true, the body will be executed
 
-Let's chat a number
+Let's chat a number in .per and in .brk:
 
+.per:
 
+(defrule
+  (true)
+=>
+  (up-chat-data-to-self "My number: %d." c: 5)
+)
+
+.brk:
+
+(if
+  (true)
+=>
+  (up-chat-data-to-self "My number: %d." 5)
+)
+
+Notice: we dropped the 'c:', numbers are resolved automatically to their integer value
+
+Now, if we wante to print the result of an arithmetic expressions we can do:
+
+(if
+  (true)
+=>
+  (up-chat-data-to-self "My number: %d." 5+3*2)
+)
+
+Which will print "My number: 11."
