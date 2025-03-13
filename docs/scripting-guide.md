@@ -1224,11 +1224,11 @@ up-allied-sn
 allied-goal and allied-sn in FactIds
 
 
-I'm not aware of AI's communicating together right now, but I might be living under a rock.
+I'm not aware of AI's communicating together in .per right now, but I might be living under a rock.
 
-Regardless, I hope that some nice convention might be found some day, so that whenever a new "multi-agent" barracks AI is made, it can communicate with older ones without the need to check their own code, just by abiding by the same convention...
+Regardless, I hope that some nice convention might be found on how they should communicate, so that whenever a new "multi-agent" barracks AI is made, it can communicate with older ones without the need to check their own code, just by abiding by the same convention...
 
-If there's a hurry or no better solution, it's possible to settle on a "virtual array" of the same minimum size that gets reserved by default, where every script can write on, so that surely AIs won't break each other at least. 
+If there's a hurry or no better solution, it's possible to settle on an array of the same minimum size that gets reserved by default, where every script can write on, so that surely AIs won't break each other at least. 
 
 
 ## Removed commands
@@ -1269,7 +1269,9 @@ up-get-search-state
 ## Commands not currently planned to be added
 
 up-get-threat-data
+
 up-get-victory-data
+
 set-shared-goal,  shared-goal (to be replaced with some convention)
 
 ## Missing needed commands
