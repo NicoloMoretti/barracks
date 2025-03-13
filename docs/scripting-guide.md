@@ -459,9 +459,8 @@ You can put as much nesting as you want, but it will still cost as many defrules
 
 ## elif
 
-There is one common structure that might occur when nesting 'if' and 'else' blocks:
+There is one common pattern that might occur when nesting 'if' and 'else' blocks:
 
-(this might look confusing)
 
 ```text
 
@@ -487,9 +486,9 @@ There is one common structure that might occur when nesting 'if' and 'else' bloc
 
 ```
 
-The idea is that you want to do only one of multiple mutually exclusive actions, and each action has a condition associated, and you only want to execute the first one that finds it's condition to be true.
+The idea is that you want to do only one of multiple mutually exclusive actions, and each action has a condition associated to it, and you only want to execute the first one that finds its condition to be true.
 
-Since this gets ugly quickly and hard to understand, you can instead use 'elif' which stands for "else if":
+Since this gets ugly quickly, and hard to understand, you can instead use 'elif' which stands for "else if":
 
 ```text
 
@@ -512,6 +511,8 @@ Since this gets ugly quickly and hard to understand, you can instead use 'elif' 
 ```
 
 'elif' stands for 'else if'. Only the first condition to be true will execute it's own body.
+
+You can add a final 'else' after all the 'elif's too.
 
 
 
