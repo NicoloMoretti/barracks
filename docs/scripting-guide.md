@@ -7,7 +7,7 @@
 > I will assume basic knowledge of '.per' scripting.
 
 > [!IMPORTANT]  
-> NEWLINE characters / '\n' are meaningful in barracks
+> NEWLINE characters / '\n' are meaningful in barracks. They are used to TERMINATE statements, adding more before beginning a new statements however is allowed and has no effect.
 
 ## Getting started
 
@@ -265,4 +265,65 @@ point myFirstPoint
 Points can be summed/subtracted together or multiplied by a scalar (integer)
 
 
+Notice that until now we wrote (true) int the condition, but we could have also wrote 'true' without '()', as true/false are considered primitive values, just like the number (3) resolves to 3.
+
+Barracks introduces 'else' blocks
+
+(if
+  ;condition
+=>
+  ;do this if condition is true
+)
+(else
+  ;do this only if condition was false
+)
+
+If the condition is true, then the body of the 'if' will be be executed, *else* the body of the else will be executed.
+If the conditions was true, the 'else' 's body would be skipped.
+
+
+(if
+  true
+=>
+  (chat-to-all "the condition was true")
+)
+(else
+  (chat-to-all "the condition was false")
+)
+
+; prints "the condition was true"
+
+(if
+  false
+=>
+  (chat-to-all "the condition was true")
+)
+(else
+  (chat-to-all "the condition was false")
+)
+
+; prints "the condition was false"
+
+
+If you want to write a an "if true" rule you can also do it more coincesly by writing an "unconditional block":
+
+(if
+  true
+=>
+  (chat-to-all "I always do this")
+  ; more stuff..
+  ; more code...
+)
+
+.
+.
+.
+V
+
+
+(
+  (chat-to-all "I always do this")
+  ; more stuff..
+  ; more code...
+)
 
