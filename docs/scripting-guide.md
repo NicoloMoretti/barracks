@@ -20,7 +20,7 @@
 
 # Getting started
 
-Just like a .per file, a .brk (barracks file extension) is read top to bottom every 1/3 of a second, a .per file is mostly made of sequential defrules.
+Just like a .per file, a .brk (Barracks file extension) is read top to bottom every 1/3 of a second, a .per file is mostly made of sequential defrules.
 
 ```text
 
@@ -134,7 +134,7 @@ Let's chat a number in .per and in .brk:
 
 Notice: we dropped the 'c:', numbers are resolved automatically to their integer value
 
-Now, if we wante to print the result of an arithmetic expressions we can do:
+Now, if we wanted to print the result of an arithmetic expressions we can do:
 
 ```
 
@@ -531,7 +531,7 @@ A while loop allows to loop over a section of code based on a looping condition.
 
 ```
 
-When the while block is first encountered, the condition is checked. If the conditions results true, then the body is exectued. After the body is executed, the code jumps back to the condition, and the process is repeated.
+When the while block is first encountered, the condition is checked. If the conditions results true, then the body is executed. After the body is executed, the code jumps back to the condition, and the process is repeated.
 
 Whenever the conditions results false, the body is skipped and the code resumes executions to after the while block.
 
@@ -847,7 +847,7 @@ condition 1, 2 and 3 are all in AND, if one is false, the body will be skipped.
 
 Not only that, but it might be lesser know that in .per conditions in there 'shorcircuit', meaning that if condition 2 was false, condition 3 would outright be skipped.
 
-This property has been mantained in barracks.
+This property has been mantained in Barracks.
 
 
 ### Logical operators
@@ -867,7 +867,7 @@ This property has been mantained in barracks.
 
 ```
 
-This is because and/or accepted maximum two arguments, barracks allows for more
+This is because and/or accepted maximum two arguments, Barracks allows for more
 
 
 For example, this.per:
@@ -887,7 +887,7 @@ For example, this.per:
 
 ```
 
-In barracks looks like this:
+In Barracks looks like this:
 
 ```text
 
@@ -958,7 +958,7 @@ Commands still work mostly the same as .per.
 
 ## Functions
 
-In barracks it's possible to define custom "functions".
+In Barracks it's possible to define custom "functions".
 
 #### Function calls
 
@@ -1113,7 +1113,7 @@ func int factorial(int n) (
 
 
 > [!WARNING]  
-> As of now only native functions such as max/min/abs can be used inside conditions. This is an unfortunate current limitation of barracks.
+> As of now only native functions such as max/min/abs can be used inside conditions. This is an unfortunate current limitation of Barracks.
 
 
 > [!WARNING]  
@@ -1146,7 +1146,7 @@ One important note is that sometimes it's necessary to declare parameters for la
 
 ```
 
-But barracks would refuse to let you use 'scout-type' inside the commands you want to, since it would tell you the constant is a number and not a parameter containing the unit line.
+But Barracks would refuse to let you use 'scout-type' inside the commands you want to, since it would tell you the constant is a number and not a parameter containing the unit line.
 
 
 #### Parameters
@@ -1180,7 +1180,7 @@ all commands that accept such type of parameter
 For now parameters can only be declared and changed in the global scope, they are actaully compiled down to defconsts in .per... a quick patchwork.
 
 
-Inside load-ifs it's illegal to define new variables, since barracks cannot be sure about what will actually happen at compile time.
+Inside load-ifs it's illegal to define new variables, since Barracks cannot be sure about what will actually happen at compile time.
 load-ifs can contain any kind of blocks (if/else/elif/while/blocks), they are just like .per.
 
 
@@ -1203,7 +1203,7 @@ Formation -1 -> <mark>formation-unchanged</mark>
 
 ## Search states
 
-Search states don't need to be declared anymore, and they are pre-declared read-only variables in barracks.
+Search states don't need to be declared anymore, and they are pre-declared read-only variables in Barracks.
 In an attempt to standardize things used often, they have been called:
 
 search-local-total, search-local-last, search-remote-total, search-remote-last
@@ -1226,14 +1226,14 @@ allied-goal and allied-sn in FactIds
 
 I'm not aware of AI's communicating together in .per right now, but I might be living under a rock.
 
-Regardless, I hope that some nice convention might be found on how they should communicate, so that whenever a new "multi-agent" barracks AI is made, it can communicate with older ones without the need to check their own code, just by abiding by the same convention...
+Regardless, I hope that some nice convention might be found on how they should communicate, so that whenever a new "multi-agent" Barracks AI is made, it can communicate with older ones without the need to check their own code, just by abiding by the same convention...
 
 If there's a hurry or no better solution, it's possible to settle on an array of the same minimum size that gets reserved by default, where every script can write on, so that surely AIs won't break each other at least. 
 
 
 ## Removed commands
 
-Some commands have been permanently removed in barracks because of contrasting philosophy with the language.
+Some commands have been permanently removed in Barracks because of contrasting philosophy with the language.
 
 Removed commands:
 
