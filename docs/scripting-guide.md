@@ -317,6 +317,16 @@ timer t-alarm
 
 They can be used only inside commands that ask for timers, and commands that ask for timers can only accept them.
 
+#### Constants
+
+pre-processor constants can be defined in the global scope by doing
+
+```text
+
+const PI 314
+
+```
+
 #### true/false values note
 
 Notice that until now we wrote (true) int the condition, but we could have also wrote 'true' without '()', as true/false are considered primitive values, just like the number (3) resolves to 3.
@@ -1083,15 +1093,6 @@ More importantly you are now required to put it at the start of the block it has
 
 In this way, when you have long blocks with many child blocks nested inside, it's immedietly clear that the everything is subject to 'disable-self', if you don't see it immedietly, it's not there.
 
-## Constants
-
-pre-processor constants can be defined in the global scope by doing
-
-```text
-
-const PI 314
-
-```
 
 ## load-if
 
