@@ -13,7 +13,7 @@
 > Rules split automatically if too long.
 
 > [!TIP]  
-> Once you start seeing real 'Barracks' code in the documentation, you can easily copy it and try it yourself, if you have Barracks set up.
+> Whenever you think you are seeing real 'Barracks' code in the documentation, you can easily copy it and try it yourself, if you have Barracks set up.
 
 ## Getting started
 
@@ -157,7 +157,7 @@ If you still wish to round you can use the additional operator '~/' which applie
 The goals array has been removed!
 If we want to save the result of a calculation we'll need to use a variable:
 
-
+```text
 int myVariable
 
 (if
@@ -169,6 +169,7 @@ int myVariable
 
 ; This code will print "My number: -9."
 ; this is a comment, .brk still uses ';' for comments
+```
 
 We created a new variable of name "myVariable" and of type "int".
 A variable is like a named box to store values in and to read them at a later time, like a goal on the goals array.
@@ -181,6 +182,7 @@ Notice that the variable resolves automatically to the number it contains when u
 
 If we want to increase our variable by +1, we can simply do:
 
+```text
 int myVariable
 
 (if
@@ -194,7 +196,11 @@ int myVariable
   (up-chat-data-to-self "My number: %d." myVariable) ;prints -8
 )
 
+```
+
 First the right side of the ':=' gets resolved, then it gets assigned to the left side.
+
+```text
 
 int myVariable
 int myVariable2 ;notice we declared another one
@@ -209,9 +215,11 @@ int myVariable2 ;notice we declared another one
   (up-chat-data-to-self "My number: %d." myVariable2) ;prints 10
 )
 
+```
 
 Another type of variable is "point"
 
+```text
 
 point myFirstPoint
 
@@ -224,9 +232,13 @@ point myFirstPoint
   (up-chat-data-to-self "Y coordinate: %d." myFirstPoint.y) ;prints 20
 )
 
+```text
+
 Notice we can assign or read the x/y fields of a point variable by using the '.x' or '.y' after it.
 
 There's also a syntax to talk about points directly:
+
+```text
 
 point myFirstPoint
 
@@ -241,7 +253,11 @@ point myFirstPoint
   (up-set-precise-target-point myFirstPoint)  ; also valid
 )
 
+```
+
 There's also point math:
+
+```text
 
 point myFirstPoint
 
@@ -269,14 +285,20 @@ point myFirstPoint
   (up-chat-data-to-self "Y coordinate: %d." myFirstPoint.y) ;prints -20
 )
 
+```
+
 Points can be summed/subtracted together or multiplied by a scalar (integer)
 
 
 There's also the 'timer' variable type, for example if we need 3 timers we can do:
 
+```text
+
 timer t-oven
 timer t-microwave
 timer t-alarm
+
+```
 
 They can be used only inside commands that ask for timers, and commands that ask for timers can only accept them.
 
@@ -284,6 +306,8 @@ They can be used only inside commands that ask for timers, and commands that ask
 Notice that until now we wrote (true) int the condition, but we could have also wrote 'true' without '()', as true/false are considered primitive values, just like the number (3) resolves to 3.
 
 Barracks introduces 'else' blocks
+
+```text
 
 (if
   ;condition
@@ -294,9 +318,12 @@ Barracks introduces 'else' blocks
   ;do this only if condition was false
 )
 
+```
+
 If the condition is true, then the body of the 'if' will be be executed, *else* the body of the else will be executed.
 If the conditions was true, the 'else' 's body would be skipped.
 
+```text
 
 (if
   true
@@ -320,8 +347,11 @@ If the conditions was true, the 'else' 's body would be skipped.
 
 ; prints "the condition was false"
 
+```
 
 If you want to write a an "if true" rule you can also do it more coincesly by writing an "unconditional block":
+
+```text
 
 (if
   true
@@ -342,8 +372,11 @@ V
   ; more code...
 )
 
+```
 
 All, control structures, including 'if' 'else' and 'blocks' can be nested into each other in any combination:
+
+```text
 
 (if
   ; condition 1
@@ -362,12 +395,16 @@ All, control structures, including 'if' 'else' and 'blocks' can be nested into e
   )
 )
 
+```
+
 You can put as much nesting as you want, but it will still cost as many defrules as it would to not do it. Use it only when it makes your code better.
 
 ## elif
 
 There is one common structure that might occur when nesting 'if' and 'else' blocks:
-(this might righly look confusing)
+(this might look confusing)
+
+```text
 
 (if
   ; condition 1
@@ -389,9 +426,13 @@ There is one common structure that might occur when nesting 'if' and 'else' bloc
   )
 )
 
+```
+
 The idea is that you want to do only one of multiple mutually exclusive actions, and each action has a condition associated, and you only want to execute the first one that finds it's condition to be true.
 
 Since this gets ugly quickly and hard to understand, you can instead use 'elif' which stands for "else if":
+
+```text
 
 (if
   ; condition 1
@@ -409,12 +450,15 @@ Since this gets ugly quickly and hard to understand, you can instead use 'elif' 
   ; do this if cond 3 and not cond 1 and not cond 2
 )
 
+```
+
 'elif' stands for 'else if'. Only the first condition to be true will execute it's own body.
 
 ## while loops
 
 A while loop allows to loop over a section of code based on a looping condition.
 
+```text
 
 (while
   ; condition
@@ -424,8 +468,12 @@ A while loop allows to loop over a section of code based on a looping condition.
   ;jump back to the conditions
 )
 
+```
+
 When the while block is first encountered, the condition is checked. If the conditions results true, then the body is exectued. After the body is executed, the code jumps back to the condition, and the process is repeated.
 Whenever the conditions results false, the body is skipped and the code resumes executions to after the while block.
+
+```text
 
 int i
 
@@ -440,11 +488,15 @@ int i
   i := i + 1
 )
 
+```
+
 Will print 0,1,2,3,4
 
 Be careful of infinite loops! If the condition is never false, Aoe2 will crash.
 
 If needed, loops can be nested inside each other.
+
+```text
 
 int x
 int y
@@ -467,11 +519,15 @@ int y
     x := x + 1
 )
 
+```
+
 Check if it works as you expected.
 
 An additional 2 keywords are available for while loops: 'break' and 'continue'
 
 If 'break' is encountered, it will jump outside of the innermost loop, break out of it:
+
+```text
 
 int i
 
@@ -491,9 +547,13 @@ int i
   i := i + 1
 )
 
+```
+
 This will terminate the loop early.
 
 'continue' ends the *current* iteration of the innermost loop, jumping immedietly to the condition
+
+```text
 
 int i
 
@@ -514,12 +574,16 @@ int i
   i := i + 1
 )
 
+```
+
 This will skip the printing of "3"
 
 
 Variables have a 'scope'.
 For now we only say variables declared outside of blocks, in the 'global' scope.
 But we could have also declare variables inside a block:
+
+```text
 
 int gloabalVariable
 
@@ -530,7 +594,11 @@ int gloabalVariable
   (do-nothing)
 )
 
+```
+
 A variable created inside a block is called 'local' and exists only inside that block, and it's children.
+
+```text
 
 int gloabalVariable
 
@@ -552,6 +620,8 @@ int gloabalVariable
   (up-chat-data-to-self "My local variable is: %d." localVariable) ; ERROR! The local variable doesn't exists here!
 )
 
+```
+
 Global variables are the only ones that can save data between multiple scripts passes throghout the whole game.
 Local variables exists in the block they are declared in and its children blocks.
 
@@ -562,6 +632,8 @@ The programming advice is that variables should exist for as short as possible a
 In this way you will not be greeted with a (too) huge wall of text of variables declrations when you open a .brk file, and it will be easier to track what a variable is for.
 
 Shadowing is also supported:
+
+```text
 
 ; How loud is the sound?
 int volume := 11
@@ -577,19 +649,28 @@ int volume := 11
   (up-chat-data-to-self "The noise volume is : %d." volume) ; prints 11
 )
 
+```
+
 Basically, in an inner scope you can declare a variable with the same name as one in the outside scope, and it will temporarly 'shadow' the more global one, until it's destroyed.
 
 Inner variables can be declared and initialized in one line:
 
+```text
+
 (if
-  false
+  true
 =>
   int myVariable := 17
+  (up-chat-data-to-self "This has indeed been initialized : %d." myVariable) ; prints 17
 )
+
+```
 
 ## comments
 
 Single line comments are supported with ';' Multiline comments are also supported:
+
+```text
 
 ; this is a comment
 
@@ -599,11 +680,14 @@ Single line comments are supported with ';' Multiline comments are also supporte
     Commented out
 */
 
+```
 
 ## conditions
 
 Conditions now allow for easy comparisons with operators <,>,<=,=>,==,!=
 The left hand side and right hand side resolve types automatically and also resolve expressions if necessary
+
+```text
 
 int myVar
 
@@ -621,8 +705,11 @@ int myVar
   (chat-to-all "No!")
 )
 
+```
 
 Conditions allow to assign to variables like .per did, and a line that assigns to a variable resolves to a 'true' value
+
+```text
 
 int myVar
 (if
@@ -631,7 +718,11 @@ int myVar
   (chat-to-all "True!") ; prints True!
 )
 
+```
+
 Just like in .per, multiple conditions are automatically put in an AND
+
+```text
 
 (if
   ; condition 1
@@ -640,6 +731,8 @@ Just like in .per, multiple conditions are automatically put in an AND
 =>
   (chat-to-all "True!") ; prints True!
 )
+
+```
 
 condition 1, 2 and 3 are all in AND, if one is false, the body will be skipped.
 
