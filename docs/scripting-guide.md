@@ -9,6 +9,9 @@
 > [!IMPORTANT]  
 > NEWLINE characters / '\n' are meaningful in barracks. They are used to TERMINATE statements, adding more before beginning a new statements however is allowed and has no effect.
 
+> [!TIP]  
+> Rules split automatically if too long
+
 ## Getting started
 
 Just like a .per file, a .brk (barracks file extension) is read top to bottom every 1/3 of a second, a .per file is mostly made of sequential defrules.
@@ -673,3 +676,32 @@ As of now a 'not' would look like this
 )
 
 In .per conditions inside logical groupings do NOT shortcircuit, meaning that in an AND for example, if one condition was false, the others would still be checked. This behavior has been kept for .brk
+
+## Strategic Numbers
+
+SNs can be easly read and modified by doing
+
+(
+  sn-example-sn-name := 30
+  sn-example-sn-name := sn-example-sn-name := 30 +1
+)
+
+## Commands
+
+Commands still work mostly the same as .per.
+First change:
+  They drop all the g: c: s:
+Second change:
+  If the command used to change goals, now it doesn't, and instead resolves to a value
+  For exemple, (up-lerp-tiles <Point1> <Point2> <Value>) will not modify Point1
+  If you whish to use the new calculated point, you can do
+  
+  aVariablename := (up-lerp-tiles <Point1> <Point2> <Value>) + <2,19>
+
+  For example here we save the calculated point after adding an offset to it, and we can still use both point1 and point2 for further computations without needing to save them in temporary goals.
+
+  Since commands resolves to values, they can be nested inside each other to act as parameters of other commands if desired.
+
+  ## Functions
+
+  In barracks it's possible to define "functions"
