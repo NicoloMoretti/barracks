@@ -344,7 +344,7 @@ SNs can be easly read and modified by doing
 
 (
   sn-example-sn-name := 30
-  sn-example-sn-name := sn-example-sn-name := 30 +1
+  sn-example-sn-name := sn-example-sn-name +1  ; it will now be equal to 31
 )
 
 ```
