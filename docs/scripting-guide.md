@@ -322,7 +322,7 @@ They can be used only inside commands that ask for timers, and commands that ask
 
 #### Constants
 
-pre-processor constants can be defined in the global scope by doing
+Preprocessor's constants can be defined in the global scope by doing
 
 ```text
 
@@ -863,7 +863,7 @@ Conditions 1, 2, and 3 are all in an AND statement. If one is false, the body wi
 
 Not only that, but it might be less known that in .per, conditions there 'shorcircuit', meaning that if condition 2 was false, condition 3 would outright be skipped.
 
-This property has been mantained in Barracks.
+This property has been maintained in Barracks.
 
 
 ### Logical operators
@@ -1205,7 +1205,7 @@ load-ifs can contain any kind of blocks (if/else/elif/while/blocks), they are ju
 ## Default constants
 
 
-All default constants (parameters definition...) are atuomatically imported.
+All default constants (parameters definition...) are automatically imported.
 
 There were some missing ones that I had to invent names for (since I couldn't find a convention, and i had to keep the commands type-safe):
 
@@ -1227,7 +1227,7 @@ In an attempt to standardize things used often, they have been called:
 search-local-total, search-local-last, search-remote-total, search-remote-last
 
 You will always find them updated after a search (but not after manually modifying lists yourself), removing the command '(up-get-search-state)'.
-If you wish to save a previous search state value before a new serach, copy the value of the search state you want into a support variable.
+If you wish to save a previous search state value before a new search, copy the value of the search state you want into a support variable.
 
 
 ## AIs communicating together
