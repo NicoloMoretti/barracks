@@ -12,6 +12,9 @@
 > [!TIP]  
 > Whenever you think you are seeing real 'Barracks' code in the documentation, you can easily copy it and try it yourself, if you have Barracks set up.
 
+> [!WARNING]  
+> Compiling a '.brk' (Barracks extension) will generate a '.per' file with the same name as the '.brk' one. Make sure you don't have any other '.per' file with the same name as the '.brk' you are compiling, or it will be permanently overwritten!
+
 > [!TIP]  
 > Rules split automatically if too long.
 
@@ -324,10 +327,11 @@ pre-processor constants can be defined in the global scope by doing
 ```text
 
 const PI 314
+const GREATING-MESSAGE "Hello!"
 
 ```
 
-Constants are considered as read-only integers
+Constants are considered as immutable read-only integers or strings of text, depending on what you put in. They are not supposed to be used to replace literal parameters like 'scout-cavalry-line'. We'll see an alternative way for that when we talk about load-ifs later.
 
 #### true/false values note
 
@@ -911,6 +915,9 @@ As of now a 'not' would look like this
 
 In .per conditions inside logical groupings do NOT shortcircuit, meaning that in an AND for example, if one condition was false, the others would still be checked. This behavior has been kept for .brk
 
+> [!NOTE]  
+> If a logical grouping is very very big, Barracks will ask you to break it down into simpler parts, but it should happen only very rarely normally. 
+
 
 ## Commands
 
@@ -1000,6 +1007,10 @@ If we wanted to use our new function we could do:
 
 ```
 
+
+This function call will execute the code inside the block of it's own definition.
+
+
 > [!NOTE]  
 > Functions are executed **only** when called, they are not part of the regular sequential stream of 'rules'.
 
@@ -1008,7 +1019,6 @@ If we wanted to use our new function we could do:
 
 
 
-This function call will execute the code inside the block of it's own definition.
 
 Let's take a closer look to the definition syntax:
 
@@ -1022,6 +1032,13 @@ We can define a function that takes any amount of parameters, 0, 1, 2, etc..., w
 
 
 The parameters will be properly defined local variables inside the function, which will shadow eventual variables of the same name in the scope the function has been called in, meaning we don't have to worry about conflicting naming.
+
+
+> [!TIP]  
+> Functions are useful mostly for 2 reasons.
+> One is for reusable parts of code, if there are sections of code you write in the same way in multiple places, you might consider turning them into a function for readability and to allow to easily update all of those sections at the same time, by simply editing the function body. Otherwise, you'd manually need to adapt *all* of them and you might mess up accidentally.
+>
+> The second reason, which I think is more profound, is to abstract away sections of your code, turning it into a system of black boxes or a top down view, allowing to review your code faster and only focus on details of the parts that interest you right then.
 
 
 > [!WARNING]  
@@ -1093,6 +1110,10 @@ func int factorial(int n) (
 > [!WARNING]  
 > As of now only native functions such as max/min/abs can be used inside conditions. This is an unfortunate current limitation of barracks.
 
+
+> [!WARNING]  
+> Currently the maximum nesting depth of function calls is of a 1000 open at the same time. Could be less if you overflow the memory with temporary variables (~14K declared int variables or ~7k point variables existing at the same time, or something in between). Be mindful that each open function occupies temporary space in memory if it has local variables. I could remove the 1000 hard limit and make it infinite, but realistically then it would crash for other reasons, I think. Just like Aoe2 can be made to crash with excessive loops, it can be made to crash with an excessive amount of function calls if they all are very complex.
+> I don't know what the limit is, but unless you were trying to crash or overflow it **on purpose**, I figure it shouldn't break ever.
 
 
 ## load-if
@@ -1243,3 +1264,7 @@ up-get-search-state
 up-get-threat-data
 up-get-victory-data
 set-shared-goal,  shared-goal (to be replaced with some convention)
+
+## Missing needed commands
+
+Cost data commands are currently missing, which is bad.
