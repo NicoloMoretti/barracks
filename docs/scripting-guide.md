@@ -10,12 +10,12 @@
 > NEWLINE characters / '\n' are meaningful in barracks. They are used to TERMINATE statements. Adding more than one new line between statements, however, is allowed and has no effect.
 
 > [!TIP]  
-> Rules split automatically if too long.
-
-> [!TIP]  
 > Whenever you think you are seeing real 'Barracks' code in the documentation, you can easily copy it and try it yourself, if you have Barracks set up.
 
-## Getting started
+> [!TIP]  
+> Rules split automatically if too long.
+
+# Getting started
 
 Just like a .per file, a .brk (barracks file extension) is read top to bottom every 1/3 of a second, a .per file is mostly made of sequential defrules.
 
@@ -156,7 +156,7 @@ Notice: the division operator '/' defaults to truncated integer division. Exampl
 
 It previously used to be "z/" in .per, but since rounding division was bugged and unexpected compared to any other programming language, I decided to default to truncated division.
 
-If you still wish to round you can use the additional operator '~/' which applies the bugged default .per division. Example: 8~/7 results in 1.
+If you still wish to round you can use the additional operator '\~/' which applies the bugged default .per division. Example: 8~/7 results in 1.
 
 
 ## Saving and reading values from memory
@@ -690,7 +690,7 @@ Inner variables can be declared and initialized in one line:
 
 ```
 
-## comments
+## Comments
 
 Single line comments are supported with ';' Multiline comments are also supported:
 
@@ -707,7 +707,7 @@ Single line comments are supported with ';' Multiline comments are also supporte
 ```
 
 
-## conditions
+## Conditions
 
 
 Conditions now allow for easy comparisons with operators <,>,<=,=>,==,!=
@@ -1041,7 +1041,7 @@ More importantly you are now required to put it at the start of the block it has
 
 In this way, when you have long blocks with many child blocks nested inside, it's immedietly clear that the everything is subject to 'disable-self', if you don't see it immedietly, it's not there.
 
-## constants
+## Constants
 
 pre-processor constants can be defined in the global scope by doing
 
@@ -1155,7 +1155,7 @@ xs-script-call (might return in I don't find a better way to use it)
 
 up-get-search-state
 
-## commands not currently planned to be added
+## Commands not currently planned to be added
 up-get-threat-data
 up-get-victory-data
 set-shared-goal,  shared-goal (to be replaced with some convention)
@@ -1174,7 +1174,7 @@ I'm not aware of AI's communicating together right now, but I might be living un
 
 Regardless, I hope that some nice convention might be found, so that whenever a new "multi-agent" barracks AI is made, it can communicate with older ones without the need to check their own code, just by abiding by the same convention...
 
-## search states
+## Search states
 
 Search states don't need to be declared anymore, and they are pre-declared read-only variables in barracks.
 In an attempt to standardize things used often, they have been called:
