@@ -268,6 +268,15 @@ point myFirstPoint
 Points can be summed/subtracted together or multiplied by a scalar (integer)
 
 
+There's also the 'timer' variable type, for example if we need 3 timers we can do:
+
+timer t-oven
+timer t-microwave
+timer t-alarm
+
+They can be used only inside commands that ask for timers, and commands that ask for timers can only accept them.
+
+
 Notice that until now we wrote (true) int the condition, but we could have also wrote 'true' without '()', as true/false are considered primitive values, just like the number (3) resolves to 3.
 
 Barracks introduces 'else' blocks
@@ -775,4 +784,51 @@ func int calculatesSomethingCrazy(int a, int b, int c) (
 Notice that in the function definition we specified 'int' instead of 'void'
 
 > [!TIP]  
-> The 'return' keyword is a bit like the equivalent of 'break' in loops for function. Encountering a break can terminate a function earlier than expected
+> The 'return' keyword is a bit like the equivalent of 'break' in loops for function. Encountering a "return" can end a function early. The return keyword is not necessary for 'void' functions, but can be used without arguments to break out of the function earlier. This is often used to simplify code.
+
+Example of using 'return' to exit function:
+
+func void amIHungry(int hunger) (
+  (if
+    hunger > 30
+  =>
+    (chat-to-all "I'm not hungry!")
+    return
+  )
+  (chat-to-all "I'm hungry!")
+)
+
+(
+  amIHungry(29)
+)
+
+
+
+Functions can call other functions inside of them, or even themeselves!
+
+func int factorial(int n) (
+    (if 
+         n <= 1
+    =>
+         return 1
+    )
+    (else
+         return n * factorial(n - 1)
+    )
+    return 0
+)
+
+## disable-self
+
+disable-self is still here and has been upgraded to disable it's block and all of it's children block!
+It's been promoted to a keyword like 'return', 'break', 'continue', so it dropped it's parenthesis.
+
+More importantly you are now required to put it at the start of the block it has to disable:
+
+(
+  disable-self
+  ; stuff
+  ; stuff
+)
+
+In this way, when you have long blocks with many child blocks nested inside, it's immedietly clear that the everything is subject to 'disable-self', if you don't see it immedietly, it's not there.
