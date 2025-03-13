@@ -570,3 +570,106 @@ Inner variables can be declared and initialized in one line:
 =>
   int myVariable := 17
 )
+
+## comments
+
+Single line comments are supported with ';' Multiline comments are also supported:
+
+; this is a comment
+
+/*
+  All this block
+        is
+    Commented out
+*/
+
+
+## conditions
+
+Conditions now allow for easy comparisons with operators <,>,<=,=>,==,!=
+The left hand side and right hand side resolve types automatically and also resolve expressions if necessary
+
+int myVar
+
+(
+  myVar := 10
+)
+
+(if
+  myVar +3 >= 12-1
+=>
+  (up-chat-data-to-self "The var +3 was : %d." myVar +3)
+  (up-chat-data-to-self "Which was greater than : %d." 12-1)
+)
+(else
+  (chat-to-all "No!")
+)
+
+
+Conditions allow to assign to variables like .per did, and a line that assigns to a variable resolves to a 'true' value
+
+int myVar
+(if
+  myVar := 100
+=>
+  (chat-to-all "True!") ; prints True!
+)
+
+Just like in .per, multiple conditions are automatically put in an AND
+
+(if
+  ; condition 1
+  ; condition 2
+  ; condition 3
+=>
+  (chat-to-all "True!") ; prints True!
+)
+
+condition 1, 2 and 3 are all in AND, if one is false, the body will be skipped.
+
+Not only that, but it might be lesser know that in .per conditions in there 'shorcircuit', meaning that if condition 2 was false, condition 3 would outright be skipped.
+This property has been mantained in barracks.
+
+### Logical operators
+
+.per required to pair logical operators in this way :
+
+(or
+  cond 1
+  (
+    cond 2
+    cond 3
+  )
+)
+
+This is because and/or accepted maximum two arguments, barracks allows for more
+
+For example, this.per:
+
+(or
+  cond 1
+  (
+    cond 2
+    (or
+      cond 3
+      cond 4
+    )
+  )
+)
+
+In barracks looks like this:
+
+(or
+  cond 1
+  cond 2
+  cond 3
+  cond 4
+)
+
+Only the operators and/or/not are supported.
+As of now a 'not' would look like this
+(not
+  cond 1
+)
+
+In .per conditions inside logical groupings do NOT shortcircuit, meaning that in an AND for example, if one condition was false, the others would still be checked. This behavior has been kept for .brk
