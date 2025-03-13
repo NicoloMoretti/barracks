@@ -8,6 +8,8 @@ I will assume basic knowledge of '.per' scripting.
 
 Just like a .per file, a .brk (barracks file extension) is read top to bottom every 1/3 of a second, a .per file is mostly made of sequential defrules.
 
+```text
+
 (defrule
 
   condition
@@ -134,5 +136,6 @@ v
 
 ....
 
+```
 
 You can safely assume it will work the same, if the condition of an 'if' statement is true, the body will be executed
