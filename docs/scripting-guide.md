@@ -134,7 +134,7 @@ Let's chat a number in .per and in .brk:
 
 Notice: we dropped the 'c:', numbers are resolved automatically to their integer value
 
-Now, if we wanted to print the result of an arithmetic expressions we can do:
+Now, if we wanted to print the result of an arithmetic expression, we can do:
 
 ```
 
@@ -148,7 +148,7 @@ Now, if we wanted to print the result of an arithmetic expressions we can do:
 Which will print "My number: 11."
 
 
-Mathematic expressions can be of any length.
+Mathematical expressions can be of any length.
 
 Supported operators are +,-,*,/,%, and '()' parenthesis for grouping for precedence.
 
@@ -331,7 +331,7 @@ const GREATING-MESSAGE "Hello!"
 
 ```
 
-Constants are considered as immutable read-only integers or strings of text, depending on what you put in. They are not supposed to be used to replace literal parameters like 'scout-cavalry-line'. We'll see an alternative way for that when we talk about load-ifs later.
+Constants are **immutable**, read-only integers or strings of text, depending on what you put in as value when defining them. They are not supposed to be used to replace literal parameters like 'scout-cavalry-line'. We'll see an alternative way for that when we talk about load-ifs later.
 
 #### true/false values note
 
@@ -342,7 +342,7 @@ I might also get to add proper boolean variables eventualy.
 
 ## Strategic Numbers
 
-SNs can be easly read and modified by doing
+SNs can be easily read and modified by doing
 
 ```text
 
@@ -372,7 +372,7 @@ Barracks introduces support for 'else' blocks
 
 If the condition is true, then the body of the 'if' will be be executed, *else* the body of the else will be executed.
 
-If the conditions was true, the 'else' 's body would be skipped.
+If the conditions was true, the 'else' body would be skipped.
 
 ```text
 
@@ -402,7 +402,7 @@ If the conditions was true, the 'else' 's body would be skipped.
 
 ### Unconditional blocks
 
-If you want to write a an "if true" rule you can also do it more coincesly by writing an "unconditional block":
+If you want to write an 'if true' rule, you can do it more concisely by writing an 'unconditional block':
 
 ```text
 
@@ -488,7 +488,7 @@ There is one common pattern that might occur when nesting 'if' and 'else' blocks
 
 The idea is that you want to do only one of multiple mutually exclusive actions, and each action has a condition associated to it, and you only want to execute the first one that finds its condition to be true.
 
-Since this gets ugly quickly, and hard to understand, you can instead use 'elif' which stands for "else if":
+Since this structure gets ugly quickly and is hard to understand, you can instead use 'elif' which stands for "else if":
 
 ```text
 
@@ -555,7 +555,7 @@ int i
 
 Will print 0,1,2,3,4
 
-Be careful of infinite loops! If the condition is never false, Aoe2 will crash.
+Be careful of infinite loops! If the condition never becomes false, Aoe2 will crash.
 
 If needed, loops can be nested inside each other.
 
@@ -671,7 +671,7 @@ int gloabalVariable
 
 ```
 
-A variable created inside a block is called 'local' and exists only inside that block, and it's children.
+A variable created inside a block is called 'local' and exists only inside that block, and its children.
 
 ```text
 
@@ -770,7 +770,7 @@ More importantly you are now required to put it at the start of the block it has
 
 ```
 
-In this way, when you have long blocks with many child blocks nested inside, it's immedietly clear that the everything is subject to 'disable-self', if you don't see it immedietly, it's not there.
+In this way, when you have long blocks with many child blocks nested inside, it's immediaetly clear that everything is subject to 'disable-self'. If you don't see it immediaetly, it's not there.
 
 ## Comments
 
@@ -844,9 +844,9 @@ Just like in .per, multiple conditions are automatically put in an AND
 
 ```
 
-condition 1, 2 and 3 are all in AND, if one is false, the body will be skipped.
+Conditions 1, 2, and 3 are all in an AND statement. If one is false, the body will be skipped.
 
-Not only that, but it might be lesser know that in .per conditions in there 'shorcircuit', meaning that if condition 2 was false, condition 3 would outright be skipped.
+Not only that, but it might be less known that in .per, conditions there 'shorcircuit', meaning that if condition 2 was false, condition 3 would outright be skipped.
 
 This property has been mantained in Barracks.
 
@@ -1043,7 +1043,7 @@ The parameters will be properly defined local variables inside the function, whi
 
 
 > [!WARNING]  
-> For reasons I digress from here, no spaces ' ' are allowed between the function name and the opening paranthesis for it's own parameters. So max (12,60) is illegal, and max(12, 60) is fine. Spaces anywhere else (in reasonable places) don't matter.
+> For reasons I digress from here, no spaces ' ' are allowed between the function name and the opening parentheses for it's own parameters. So max (12,60) is illegal, and max(12, 60) is fine. Spaces anywhere else (in reasonable places) don't matter.
 
 
 #### Return
@@ -1094,7 +1094,7 @@ func void amIHungry(int hunger) (
 
 ##### Recursion
 
-Functions can call other functions inside of them, or even themeselves!
+Functions can call other functions inside them, or even open new instances of themeselves!
 
 ```text
 
@@ -1111,6 +1111,8 @@ func int factorial(int n) (
 )
 
 ```
+
+This is possible because a function call is not simply a jump to a zone of code, but it's more akin to executing a new sub-program, which has it's own memory and execution state.
 
 
 > [!WARNING]  
@@ -1178,7 +1180,7 @@ all commands that accept such type of parameter
 ```
 
 'param' varaibles must be initialized when defined to make clear what parameter class they will contain.
-For now parameters can only be declared and changed in the global scope, they are actaully compiled down to defconsts in .per... a quick patchwork.
+For now, parameters can only be declared and changed in the global scope. They are actaully compiled down to defconsts in .per... a quick patchwork.
 
 
 Inside load-ifs it's illegal to define new variables, since Barracks cannot be sure about what will actually happen at compile time.
@@ -1209,7 +1211,7 @@ In an attempt to standardize things used often, they have been called:
 
 search-local-total, search-local-last, search-remote-total, search-remote-last
 
-You will always find them updated after a serach (but not after manually modifying lists yourself), removing the command '(up-get-search-state)'.
+You will always find them updated after a search (but not after manually modifying lists yourself), removing the command '(up-get-search-state)'.
 If you wish to save a previous search state value before a new serach, copy the value of the search state you want into a support variable.
 
 
