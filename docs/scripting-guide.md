@@ -148,7 +148,7 @@ Notice: the division operator '/' defaults to truncated integer division. Exampl
 It previously used to be "z/" in .per, but since rounding division was bugged and unexpected compared to any other programming language, I decided to default to truncated division.
 If you still wish to round you can use the additional operator '~/' which applies the bugged default .per division. Example: 8~/7 results in 1.
 
-## Saving and reading values in memory
+## Saving and reading values from memory
 
 The goals array has been removed!
 If we want to save the result of a calculation we'll need to use a variable:
