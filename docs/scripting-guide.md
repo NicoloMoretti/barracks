@@ -711,11 +711,68 @@ Second change:
   Of course it's up to you if and when you wanna nest them.
 
   > [!TIP]  
-  > the parameter '0' for FactIDs that do not need any FactParameter is no longer needed
+  > The parameter '0' for FactIDs that do not need any FactParameter is no longer needed. Just mentioning it if you noticed something weird.
 
-  ## Functions
+## Functions
 
-  In barracks it's possible to define custom "functions".
-  There are 3 native functions already implemented by default: min(), max(), abs().
-  Functions are similar to commands, but the syntax is slightly different.
-  The name of the function comes right before the paranthesis that will contain the arguments
+In barracks it's possible to define custom "functions".
+There are 3 native functions already implemented by default: min(), max(), abs().
+Functions are similar to commands, but the syntax is slightly different.
+The name of the function comes right before the paranthesis that will contain the arguments.
+
+Example:
+
+(
+  (up-chat-data-to-self "The biggest number is : %d !" max(12, 60) )
+)
+
+Notice that parameters inside function are separated by a comma ',' too!
+
+Let's define a new custom function, which is a bit like a custom command made out of other basic commands:
+
+func void updateGathererPercentages(int food, int wood, int gold, int stone) (
+  sn-food-gatherer-percentage := food
+  sn-wood-gatherer-percentage := wood
+  sn-gold-gatherer-percentage := gold
+  sn-stone-gatherer-percentage := stone
+)
+
+If we wanted to use our new function we could do:
+
+(
+  updateGathererPercentages(50, 30, 10, 10)
+)
+
+> [!TIP]  
+> Functions can be defined both before or after their first use in the file, and can interact with global variables defined both before or after their own definition.
+
+
+This function call will execute the code inside the block of it's own definition.
+Let's take a closer look to the definition syntax:
+
+The keyword "func" denotes the start of a function definition, the second words is the return type, if it had been 'int' it would have meant that the function would have returned/resolved to a value, 'void' means that it doesn't return a number or anything really.
+Then, after the return type, we must specify the name of the new function, followed by '(', some *facultative* parameters, and a closing ')'. then we open a new '(' and define the actual body of the function, what it has to do when called, and when we are done we close it with a ')'.
+
+We can define a function that takes any amount of parameters, 0, 1, 2, etc..., we must specify a type for each parameter and name to reference it when we write the body of the function.
+
+The parameters will be properly defined local variables inside the function, which will shadow eventual variables of the same name in the scope the function has been called in, meaning we don't have to worry about conflicting naming.
+
+
+> [!WARNING]  
+> For reasons I digress from here, no spaces ' ' are allowed between the function name and the opening paranthesis for it's own parameters. So max (12,60) is illegal, and max(12, 60) is fine. Spaces anywhere else (in reasonable places) don't matter.
+
+If we want to define a function that returns a number, we must use the 'return' keyword whenever we want the function to end and return a value.
+
+
+func int calculatesSomethingCrazy(int a, int b, int c) (
+  return a * b * c - 100 * a
+)
+
+(
+  int numberINeeded = calculatesSomethingCrazy(10,20,30)
+)
+
+Notice that in the function definition we specified 'int' instead of 'void'
+
+> [!TIP]  
+> The 'return' keyword is a bit like the equivalent of 'break' in loops for function. Encountering a break can terminate a function earlier than expected
