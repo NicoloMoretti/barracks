@@ -15,3 +15,7 @@ A '.per' will be generated in the same location as the '.brk' file, or eventual 
 
 To make it easier to use, I suggest to download the 'barracks' shell script as well, keep it next to the Java application, and launch that instead by simply typing 'barracks' in the folder where both files are contained.
 Finally, to make it possible to launch barracks from wherever in your system, indipendently of it's storage location, I would suggest to put both the 'barracks' shell script and the Java file in a directory that your PC recognizes as under 'PATH'.
+
+## Getting started
+
+To learn how to use Barracks you can consult the documentation available under docs.
