@@ -1153,7 +1153,9 @@ To avoid that you have to do define a parameter variable:
 
 param scout-type := scout-cavalry-line
 
-; the "scout-type" variable will now accecept only other "unit lines" inside of it, and will be available to be used in all commands that accept such type of parameter
+/* the "scout-type" variable will now accecept only other "unit lines" inside of it, and will be available to be used in
+all commands that accept such type of parameter
+*/
 
 #load-if-defined AZTEC-CIV	
     scout-type :=  eagle-warrior-line
