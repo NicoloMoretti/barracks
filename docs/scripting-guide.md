@@ -954,7 +954,7 @@ Commands still work mostly the same as .per.
   Of course it's up to you if and when you wanna nest them.
 
   > [!TIP]  
-  > The parameter '0' for FactIDs that do not need any FactParameter is no longer needed. Just mentioning it if you noticed something weird.
+  > The parameter '0' for FactIDs that do not need any FactParameter is no longer needed. Just mentioning it if you noticed something missing.
 
 ## Functions
 
