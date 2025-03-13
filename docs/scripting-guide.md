@@ -512,7 +512,22 @@ Since this structure gets ugly quickly and is hard to understand, you can instea
 
 'elif' stands for 'else if'. Only the first condition to be true will execute it's own body.
 
-You can add a final 'else' after all the 'elif's too.
+You can add a final 'else' after all the 'elif's too:
+
+
+```text
+.
+.
+.
+(elif
+  ; condition 3
+=>
+  ; do this if cond 3 and not cond 1 and not cond 2
+)
+(else
+  (chat-to-all "All other 'elif's failed to execute!")
+)
+```
 
 
 
