@@ -320,10 +320,76 @@ If you want to write a an "if true" rule you can also do it more coincesly by wr
 .
 V
 
-
 (
   (chat-to-all "I always do this")
   ; more stuff..
   ; more code...
 )
+
+
+All, control structures, including 'if' 'else' and 'blocks' can be nested into each other in any combination:
+
+(if
+  ; condition 1
+=>
+  ; some code that depends on condition1
+  (if
+    ; condition 2
+  =>
+    ; some code that depends on condition 1 AND condition 2
+  )
+  ; some code that depends on condition 1
+  (if
+    ; condition3
+  =>
+    ; some code that depends on condition 1 AND condition 3
+  )
+)
+
+You can put as much nesting as you want, but it will still cost as many defrules as it would to not do it. Use it only when it makes your code better.
+
+There is one common structure that might occur when nesting 'if' and 'else' blocks:
+(this might righly look confusing)
+
+(if
+  ; condition 1
+=>
+  ; do this if cond 1
+)
+(else
+  (if
+    ; condition 2
+  =>
+    ; do this if cond 2 and not cond 1
+  )
+  (else
+    (if
+      ; condition 3
+    =>
+      ; do this if cond 3 and not cond 1 and not cond 2
+    )
+  )
+)
+
+The idea is that you want to do only one of multiple mutually exclusive actions, and each action has a condition associated, and you only want to execute the first one that finds it's condition to be true.
+
+Since this gets ugly quickly and hard to understand, you can instead use 'elif' which stands for "else if":
+
+(if
+  ; condition 1
+=>
+  ; do this if cond 1
+)
+(elif
+  ; condition 2
+=>
+  ; do this if cond 2 and not cond 1
+)
+(elif
+  ; condition 3
+=>
+  ; do this if cond 3 and not cond 1 and not cond 2
+)
+
+'elif' stands for 'else if'. Only the first condition to be true will execute it's own body.
 
