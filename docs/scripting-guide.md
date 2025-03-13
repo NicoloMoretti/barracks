@@ -1047,7 +1047,7 @@ Then, after the return type, we must specify the name of the new function, follo
 We can define a function that takes any amount of parameters, 0, 1, 2, etc..., we must specify a type for each parameter and name to reference it when we write the body of the function.
 
 
-The parameters will be properly defined local variables inside the function, which will shadow eventual variables of the same name in the scope the function has been called in, meaning we don't have to worry about conflicting naming.
+The parameters will be properly defined local variables inside the function, which will shadow eventual variables of the same name in the scope that the function has been called in, meaning we don't have to worry about conflicting naming when we call functions.
 
 
 > [!TIP]  
