@@ -157,7 +157,7 @@ Standard operators precedence is applied.
 
 Notice: the division operator '/' defaults to truncated integer division. Example: 8/7 results in 0.
 
-It previously used to be "z/" in .per, but since rounding division was bugged and unexpected compared to any other programming language, I decided to default to truncated division.
+It previously used to be "z/" in .per, but since rounding division was bugged and inconsistent compared to most other programming language, I decided to default to truncated division.
 
 If you still wish to round you can use the additional operator '\~/' which applies the bugged default .per division. Example: 8~/7 results in 1.
 
@@ -355,7 +355,7 @@ SNs can be easily read and modified by doing
 
 ## else
 
-Barracks introduces support for 'else' blocks
+Barracks supports 'else' blocks
 
 ```text
 
@@ -930,8 +930,8 @@ Commands still work mostly the same as .per.
   
 2. Second change:
 
-  If the command used to change goals, now it doesn't, and instead resolves to a value
-  For example, (up-lerp-tiles <Point1> <Point2> <Value>) will not modify Point1.
+  If the command used to change input goals, now it doesn't, and instead resolves to a value
+  For example, (up-lerp-tiles <Point1> <Point2> <Value>) will not modify Point1 (or was it Point2? No need to remember it!).
   
   If you whish to use the new calculated point, you can do:
   
@@ -1088,7 +1088,7 @@ func void amIHungry(int hunger) (
 ```
 
 > [!TIP]  
-> If a command or a function return a 'point' type data, then their x/y coordinate can be resolved instantly, for example:
+> If a command or a function returns a 'point' data, then its x/y coordinate can be accessed instantly, for example:
 > 
 > int a := (up-bound-point <100,700>).x  is perfectly valid code. Same goes for functions, but as I'm currenly writing, I forgot to add it for functions.
 
