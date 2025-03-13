@@ -10,7 +10,7 @@
 > NEWLINE characters / '\n' are meaningful in barracks. They are used to TERMINATE statements, adding more before beginning a new statements however is allowed and has no effect.
 
 > [!TIP]  
-> Rules split automatically if too long
+> Rules split automatically if too long.
 
 ## Getting started
 
@@ -702,6 +702,20 @@ Second change:
 
   Since commands resolves to values, they can be nested inside each other to act as parameters of other commands if desired.
 
+  Example:
+
+  (
+    (up-chat-data-to-self "This is my military population : %d !" (up-get-fact military-population) )
+  )
+
+  Of course it's up to you if and when you wanna nest them.
+
+  > [!TIP]  
+  > the parameter '0' for FactIDs that do not need any FactParameter is no longer needed
+
   ## Functions
 
-  In barracks it's possible to define "functions"
+  In barracks it's possible to define custom "functions".
+  There are 3 native functions already implemented by default: min(), max(), abs().
+  Functions are similar to commands, but the syntax is slightly different.
+  The name of the function comes right before the paranthesis that will contain the arguments
