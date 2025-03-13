@@ -7,7 +7,7 @@
 > I will assume basic knowledge of '.per' scripting.
 
 > [!IMPORTANT]  
-> NEWLINE characters / '\n' are meaningful in barracks. They are used to TERMINATE statements, adding more before beginning a new statements however is allowed and has no effect.
+> NEWLINE characters / '\n' are meaningful in barracks. They are used to TERMINATE statements. Adding more than one new line between statements, however, is allowed and has no effect.
 
 > [!TIP]  
 > Rules split automatically if too long.
