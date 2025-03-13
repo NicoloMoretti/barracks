@@ -1086,6 +1086,10 @@ func void amIHungry(int hunger) (
 
 ```
 
+> [!TIP]  
+> If a command or a function return a point type data, then their x/y coordinate can be resolved instantly, for example:
+> int a := (up-bound-point <100,700>).x is perfectly valid code. Same goes for functions, but as I'm currenly writing, I forgot to add it for functions.
+
 ##### Recursion
 
 Functions can call other functions inside of them, or even themeselves!
