@@ -746,6 +746,27 @@ Inner variables can be declared and initialized in one line:
 
 ```
 
+## disable-self
+
+
+disable-self is still here and has been upgraded to disable it's block and all of it's children block!
+
+It's been promoted to a keyword like 'return', 'break', 'continue', so it dropped it's parenthesis.
+
+More importantly you are now required to put it at the start of the block it has to disable:
+
+```text
+
+(
+  disable-self
+  ; stuff
+  ; stuff
+)
+
+```
+
+In this way, when you have long blocks with many child blocks nested inside, it's immedietly clear that the everything is subject to 'disable-self', if you don't see it immedietly, it's not there.
+
 ## Comments
 
 Single line comments are supported with ';' Multiline comments are also supported:
@@ -1072,27 +1093,6 @@ func int factorial(int n) (
 > [!WARNING]  
 > As of now only native functions such as max/min/abs can be used inside conditions. This is an unfortunate current limitation of barracks.
 
-
-## disable-self
-
-
-disable-self is still here and has been upgraded to disable it's block and all of it's children block!
-
-It's been promoted to a keyword like 'return', 'break', 'continue', so it dropped it's parenthesis.
-
-More importantly you are now required to put it at the start of the block it has to disable:
-
-```text
-
-(
-  disable-self
-  ; stuff
-  ; stuff
-)
-
-```
-
-In this way, when you have long blocks with many child blocks nested inside, it's immedietly clear that the everything is subject to 'disable-self', if you don't see it immedietly, it's not there.
 
 
 ## load-if
