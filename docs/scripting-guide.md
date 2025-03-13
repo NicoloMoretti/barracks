@@ -348,6 +348,8 @@ All, control structures, including 'if' 'else' and 'blocks' can be nested into e
 
 You can put as much nesting as you want, but it will still cost as many defrules as it would to not do it. Use it only when it makes your code better.
 
+## elif
+
 There is one common structure that might occur when nesting 'if' and 'else' blocks:
 (this might righly look confusing)
 
@@ -392,4 +394,149 @@ Since this gets ugly quickly and hard to understand, you can instead use 'elif' 
 )
 
 'elif' stands for 'else if'. Only the first condition to be true will execute it's own body.
+
+## while loops
+
+A while loop allows to loop over a section of code based on a looping condition.
+
+
+(while
+  ; condition
+=>
+  ; do work
+  ; do more work
+  ;jump back to the conditions
+)
+
+When the while block is first encountered, the condition is checked. If the conditions results true, then the body is exectued. After the body is executed, the code jumps back to the condition, and the process is repeated.
+Whenever the conditions results false, the body is skipped and the code resumes executions to after the while block.
+
+int i
+
+(
+  i := 0
+)
+
+(while
+  i < 5
+=>
+  (up-chat-data-to-self "'i' is: %d." i)
+  i := i + 1
+)
+
+Will print 0,1,2,3,4
+
+Be careful of infinite loops! If the condition is never false, Aoe2 will crash.
+
+If needed, loops can be nested inside each other.
+
+int x
+int y
+
+(
+    x := 0
+)
+
+(while
+    x < 5
+=>
+    (up-chat-data-to-self "'x' is: %d." x)
+    y := 0
+    (while
+        y < 5
+    =>
+        (up-chat-data-to-self "'y' is: %d." y)
+        y := y + 1
+    )
+    x := x + 1
+)
+
+Check if it works as you expected.
+
+An additional 2 keywords are available for while loops: 'break' and 'continue'
+
+If 'break' is encountered, it will jump outside of the innermost loop, break out of it:
+
+int i
+
+(
+  i := 0
+)
+
+(while
+  i < 5
+=>
+  (if
+    i == 3
+  =>
+    break
+  )
+  (up-chat-data-to-self "'i' is: %d." i)
+  i := i + 1
+)
+
+This will terminate the loop early.
+
+'continue' ends the *current* iteration of the innermost loop, jumping immedietly to the condition
+
+int i
+
+(
+  i := 0
+)
+
+(while
+  i < 5
+=>
+  (if
+    i == 3
+  =>
+    i := i + 1
+    continue
+  )
+  (up-chat-data-to-self "'i' is: %d." i)
+  i := i + 1
+)
+
+This will skip the printing of "3"
+
+
+Variables have a 'scope'.
+For now we only say variables declared outside of blocks, in the 'global' scope.
+But we could have also declare variables inside a block:
+
+int gloabalVariable
+
+(if
+  true
+=>
+  int localVariable
+  (do-nothing)
+)
+
+A variable created inside a block is called 'local' and exists only inside that block, and it's children.
+
+int gloabalVariable
+
+(if
+  true
+=>
+  int localVariable
+  gloabalVariable := 20
+  localVariable := 100
+  (up-chat-data-to-self "My local variable is: %d." gloabalVariable) ; prints 20
+  (up-chat-data-to-self "My local variable is: %d." localVariable) ; prints 100
+  (
+    (up-chat-data-to-self "My local variable is: %d." localVariable) ; prints 100, still exists here
+  )
+)
+
+(
+  (up-chat-data-to-self "My local variable is: %d." gloabalVariable) ; prints 20
+  (up-chat-data-to-self "My local variable is: %d." localVariable) ; ERROR! The local variable doesn't exists here!
+)
+
+Global variables are the only ones that can save data between multiple scripts passes throghout the whole game.
+Local variables exists in the block they are declared in and it's children blocks.
+
 
