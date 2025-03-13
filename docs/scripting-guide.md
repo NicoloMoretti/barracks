@@ -336,6 +336,18 @@ Notice that until now we wrote (true) int the condition, but we could have also 
 I might also get to add proper boolean variables eventualy.
 
 
+## Strategic Numbers
+
+SNs can be easly read and modified by doing
+
+```text
+
+(
+  sn-example-sn-name := 30
+  sn-example-sn-name := sn-example-sn-name := 30 +1
+)
+
+```
 
 ## else
 
@@ -878,19 +890,6 @@ As of now a 'not' would look like this
 
 In .per conditions inside logical groupings do NOT shortcircuit, meaning that in an AND for example, if one condition was false, the others would still be checked. This behavior has been kept for .brk
 
-
-## Strategic Numbers
-
-SNs can be easly read and modified by doing
-
-```text
-
-(
-  sn-example-sn-name := 30
-  sn-example-sn-name := sn-example-sn-name := 30 +1
-)
-
-```
 
 ## Commands
 
