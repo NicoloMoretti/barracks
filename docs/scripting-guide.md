@@ -1039,7 +1039,7 @@ This function call will execute the code inside the block of it's own definition
 Let's take a closer look to the definition syntax:
 
 
-The keyword "func" denotes the start of a function definition, the second words is the return type, if it had been 'int' it would have meant that the function would have returned/resolved to a value, 'void' means that it doesn't return a number or anything really.
+The keyword "func" denotes the start of a function definition, the second word is the return type of the function, if it had been 'int' it would have meant that the function would have returned/resolved to a value, 'void' means that it doesn't return a number or anything really.
 
 Then, after the return type, we must specify the name of the new function, followed by '(', some *facultative* parameters, and a closing ')'. then we open a new '(' and define the actual body of the function, what it has to do when called, and when we are done we close it with a ')'.
 
