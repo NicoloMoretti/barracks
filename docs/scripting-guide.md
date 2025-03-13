@@ -105,6 +105,8 @@ v
 
 You can safely assume it will work the same: if the condition of an 'if' statement is true, the body will be executed
 
+## Basic Mathematics
+
 Let's chat a number in .per and in .brk:
 
 .per:
@@ -134,3 +136,11 @@ Now, if we wante to print the result of an arithmetic expressions we can do:
 )
 
 Which will print "My number: 11."
+
+Mathematic expressions can be of any length.
+Supported operators are +,-,*,/,%, and '()' parenthesis for grouping for precedence.
+Standard operators precedence is applied.
+
+Notice: the division operator '/' defaults to truncated integer division. Example: 8/7 results in 0.
+It previously used to be "z/" in .per, but since rounding division was bugged and unexpected compared to any other programming language, I decided to default to truncated division.
+If you still wish to round you can use the additional operator '~/' which applies the bugged default .per division. Example: 8~/7 results in 1.
