@@ -12,6 +12,9 @@
 > [!TIP]  
 > Rules split automatically if too long.
 
+> [!TIP]  
+> Once you start seeing real 'Barracks' code in the documentation, you can easily copy it and try it yourself, if you have Barracks set up.
+
 ## Getting started
 
 Just like a .per file, a .brk (barracks file extension) is read top to bottom every 1/3 of a second, a .per file is mostly made of sequential defrules.
@@ -36,7 +39,6 @@ v
   body/actions
 )
 
-
 .
 .
 .
@@ -48,16 +50,12 @@ v
   body/actions
 )
 
-
-
 .
 .
 .
 v
 
-
 ....
-
 ```
 
 In Barracks regular "defrules" have been replaced by "if" blocks.
@@ -84,7 +82,6 @@ v
   body/actions
 )
 
-
 .
 .
 .
@@ -96,14 +93,12 @@ v
   body/actions
 )
 
-
 .
 .
 .
 v
 
 ....
-
 ```
 
 You can safely assume it will work the same: if the condition of an 'if' statement is true, the body will be executed
@@ -113,24 +108,32 @@ You can safely assume it will work the same: if the condition of an 'if' stateme
 Let's chat a number in .per and in .brk:
 
 .per:
+```text
 
 (defrule
   (true)
 =>
   (up-chat-data-to-self "My number: %d." c: 5)
 )
+```
+
 
 .brk:
 
+```text
 (if
   (true)
 =>
   (up-chat-data-to-self "My number: %d." 5)
 )
 
+```
+
 Notice: we dropped the 'c:', numbers are resolved automatically to their integer value
 
 Now, if we wante to print the result of an arithmetic expressions we can do:
+
+```
 
 (if
   (true)
@@ -138,6 +141,7 @@ Now, if we wante to print the result of an arithmetic expressions we can do:
   (up-chat-data-to-self "My number: %d." 5+3*2)
 )
 
+```
 Which will print "My number: 11."
 
 Mathematic expressions can be of any length.
