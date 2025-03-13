@@ -327,6 +327,8 @@ const PI 314
 
 ```
 
+Constants are considered as read-only integers
+
 #### true/false values note
 
 Notice that until now we wrote (true) int the condition, but we could have also wrote 'true' without '()', as true/false are considered primitive values, just like the number (3) resolves to 3.
