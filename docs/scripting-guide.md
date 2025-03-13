@@ -248,7 +248,7 @@ point myFirstPoint
   (up-chat-data-to-self "Y coordinate: %d." myFirstPoint.y) ;prints 20
 )
 
-```text
+```
 
 Notice we can assign or read the x/y fields of a point variable by using the '.x' or '.y' after it.
 
