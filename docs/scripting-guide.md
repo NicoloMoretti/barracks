@@ -537,6 +537,36 @@ int gloabalVariable
 )
 
 Global variables are the only ones that can save data between multiple scripts passes throghout the whole game.
-Local variables exists in the block they are declared in and it's children blocks.
+Local variables exists in the block they are declared in and its children blocks.
+
+You cannot declare two variables with the same name in exactly the same scope.
+However since local variables don't exist anymore outside their scope, you can reuse their names
+
+The programming advice is that variables should exist for as short as possible and close to where they are used, and made global only if they are used to store data through multiple script passes or all around the code.
+In this way you will not be greeted with a (too) huge wall of text of variables declrations when you open a .brk file, and it will be easier to track what a variable is for.
+
+Shadowing is also supported:
+
+; How loud is the sound?
+int volume := 11
 
 
+; Calculate size of 3x4x5 cuboid.
+(
+  int volume = 3 * 4 * 5
+  (up-chat-data-to-self "The cube has a volume of : %d." volume) ; prints 3 * 4 * 5
+)
+
+(
+  (up-chat-data-to-self "The noise volume is : %d." volume) ; prints 11
+)
+
+Basically, in an inner scope you can declare a variable with the same name as one in the outside scope, and it will temporarly 'shadow' the more global one, until it's destroyed.
+
+Inner variables can be declared and initialized in one line:
+
+(if
+  false
+=>
+  int myVariable := 17
+)
