@@ -1173,6 +1173,35 @@ AttackStance -1 -> stance-unchanged
 Formation -1 -> formation-unchanged
 
 
+## Search states
+
+Search states don't need to be declared anymore, and they are pre-declared read-only variables in barracks.
+In an attempt to standardize things used often, they have been called:
+
+search-local-total, search-local-last, search-remote-total, search-remote-last
+
+You will always find them updated after a serach (but not after manually modifying lists yourself), removing the command '(up-get-search-state)'.
+If you wish to save a previous search state value before a new serach, copy the value of the search state you want into a support variable.
+
+
+## AIs communicating together
+
+Commands related to AIs communicating together are currenly disabled
+
+
+up-get-shared-goal
+up-set-shared-goal
+up-allied-goal
+up-allied-sn
+allied-goal and allied-sn in FactIds
+
+
+I'm not aware of AI's communicating together right now, but I might be living under a rock.
+
+Regardless, I hope that some nice convention might be found some day, so that whenever a new "multi-agent" barracks AI is made, it can communicate with older ones without the need to check their own code, just by abiding by the same convention...
+
+If there's a hurry or no better solution, it's possible to settle on a "virtual array" of the same minimum size that gets reserved by default, where every script can write on, so that surely AIs won't break each other at least. 
+
 
 ## Removed commands
 
@@ -1210,34 +1239,7 @@ up-get-search-state
 
 
 ## Commands not currently planned to be added
+
 up-get-threat-data
 up-get-victory-data
 set-shared-goal,  shared-goal (to be replaced with some convention)
-
-
-## AIs communicating together
-
-Commands related to AIs communicating together are currenly disabled
-
-
-up-get-shared-goal
-up-set-shared-goal
-up-allied-goal
-up-allied-sn
-allied-goal and allied-sn in FactIds
-
-
-I'm not aware of AI's communicating together right now, but I might be living under a rock.
-
-Regardless, I hope that some nice convention might be found, so that whenever a new "multi-agent" barracks AI is made, it can communicate with older ones without the need to check their own code, just by abiding by the same convention...
-
-
-## Search states
-
-Search states don't need to be declared anymore, and they are pre-declared read-only variables in barracks.
-In an attempt to standardize things used often, they have been called:
-
-search-local-total, search-local-last, search-remote-total, search-remote-last
-
-You will always find them updated after a serach (but not after manually modifying lists yourself), removing the command '(up-get-search-state)'.
-If you wish to save a previous search state value before a new serach, copy the value of the search state you want into a support variable.
