@@ -228,6 +228,8 @@ int myVariable2 ;notice we declared another one
 
 ```
 
+### Points
+
 Another type of variable is "point"
 
 ```text
@@ -301,6 +303,8 @@ point myFirstPoint
 Points can be summed/subtracted together or multiplied by a scalar (integer)
 
 
+#### Timers
+
 There's also the 'timer' variable type, for example if we need 3 timers we can do:
 
 ```text
@@ -313,8 +317,15 @@ timer t-alarm
 
 They can be used only inside commands that ask for timers, and commands that ask for timers can only accept them.
 
+#### true/false values note
 
 Notice that until now we wrote (true) int the condition, but we could have also wrote 'true' without '()', as true/false are considered primitive values, just like the number (3) resolves to 3.
+
+I'm hoping to add proper boolean variables eventualy.
+
+
+
+## else
 
 Barracks introduces 'else' blocks
 
@@ -361,6 +372,8 @@ If the conditions was true, the 'else' 's body would be skipped.
 
 ```
 
+### Unconditional blocks
+
 If you want to write a an "if true" rule you can also do it more coincesly by writing an "unconditional block":
 
 ```text
@@ -386,6 +399,10 @@ V
 
 ```
 
+
+## Nesting
+
+
 All, control structures, including 'if' 'else' and 'blocks' can be nested into each other in any combination:
 
 ```text
@@ -410,6 +427,7 @@ All, control structures, including 'if' 'else' and 'blocks' can be nested into e
 ```
 
 You can put as much nesting as you want, but it will still cost as many defrules as it would to not do it. Use it only when it makes your code better.
+
 
 ## elif
 
@@ -466,6 +484,8 @@ Since this gets ugly quickly and hard to understand, you can instead use 'elif' 
 ```
 
 'elif' stands for 'else if'. Only the first condition to be true will execute it's own body.
+
+
 
 ## while loops
 
@@ -539,6 +559,9 @@ Check if it works as you expected.
 
 An additional 2 keywords are available for while loops: 'break' and 'continue'
 
+
+### break
+
 If 'break' is encountered, it will jump outside of the innermost loop, break out of it:
 
 ```text
@@ -564,6 +587,9 @@ int i
 ```
 
 This will terminate the loop early.
+
+
+### continue
 
 'continue' ends the *current* iteration of the innermost loop, jumping immedietly to the condition
 
@@ -592,6 +618,10 @@ int i
 
 This will skip the printing of "3"
 
+
+## Scope and shadowing
+
+### Scope
 
 Variables have a 'scope'.
 
@@ -652,6 +682,8 @@ The programming advice is that variables should exist for as short as possible a
 
 In this way you will not be greeted with a (too) huge wall of text of variables declrations when you open a .brk file, and it will be easier to track what a variable is for.
 
+
+### Shadowing
 
 Shadowing is also supported:
 
@@ -889,6 +921,8 @@ Commands still work mostly the same as .per.
 
 In barracks it's possible to define custom "functions".
 
+#### Function calls
+
 There are 3 native functions already implemented by default: min(), max(), abs().
 
 Functions are similar to commands, but the syntax is slightly different.
@@ -907,6 +941,9 @@ Example:
 ```
 
 Notice that parameters inside function are separated by a comma ',' too!
+
+
+#### Functions definitions
 
 Let's define a new custom function, which is a bit like a custom command made out of other basic commands:
 
@@ -958,6 +995,9 @@ The parameters will be properly defined local variables inside the function, whi
 > [!WARNING]  
 > For reasons I digress from here, no spaces ' ' are allowed between the function name and the opening paranthesis for it's own parameters. So max (12,60) is illegal, and max(12, 60) is fine. Spaces anywhere else (in reasonable places) don't matter.
 
+
+#### Return
+
 If we want to define a function that returns a number, we must use the 'return' keyword whenever we want the function to end and return a value.
 
 ```text
@@ -996,6 +1036,8 @@ func void amIHungry(int hunger) (
 )
 
 ```
+
+##### Recursion
 
 Functions can call other functions inside of them, or even themeselves!
 
@@ -1079,6 +1121,8 @@ One important note is that sometimes it's necessary to declare parameters for la
 But barracks would refuse to let you use 'scout-type' inside the commands you want to, since it would tell you the constant is a number and not a parameter containing the unit line.
 
 
+#### Parameters
+
 To avoid that you have to do define a parameter variable:
 
 
@@ -1109,6 +1153,7 @@ For now parameters can only be declared and changed in the global scope, they ar
 Inside load-ifs it's illegal to define new variables, since barracks cannot be sure about what will actually happen at compile time.
 load-ifs can contain any kind of blocks (if/else/elif/while/blocks), they are just like .per.
 
+
 ## Default constants
 
 
@@ -1116,10 +1161,16 @@ All default constants (parameters definition...) are atuomatically imported.
 
 There were some missing ones that I had to invent names for (since I couldn't find a convention, and i had to keep the commands type-safe):
 
+
 ActionId  -1 -> actionid-any
+
 OrderId -1 -> orderid-any
+
 AttackStance -1 -> stance-unchanged
+
 Formation -1 -> formation-unchanged
+
+
 
 ## Removed commands
 
@@ -1155,14 +1206,17 @@ xs-script-call (might return in I don't find a better way to use it)
 
 up-get-search-state
 
+
 ## Commands not currently planned to be added
 up-get-threat-data
 up-get-victory-data
 set-shared-goal,  shared-goal (to be replaced with some convention)
 
+
 ## AIs communicating together
 
 Commands related to AIs communicating together are currenly disabled
+
 
 up-get-shared-goal
 up-set-shared-goal
@@ -1170,9 +1224,11 @@ up-allied-goal
 up-allied-sn
 allied-goal and allied-sn in FactIds
 
+
 I'm not aware of AI's communicating together right now, but I might be living under a rock.
 
 Regardless, I hope that some nice convention might be found, so that whenever a new "multi-agent" barracks AI is made, it can communicate with older ones without the need to check their own code, just by abiding by the same convention...
+
 
 ## Search states
 
