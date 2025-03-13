@@ -221,12 +221,48 @@ Notice we can assign or read the x/y fields of a point variable by using the '.x
 
 There's also a syntax to talk about points directly:
 
+point myFirstPoint
+
 (if
   (true)
 =>
-  myFirstPoint.x := 10
-  myFirstPoint.y := 20
+  myFirstPoint := <10,20>      ; notice the <x value, y value> syntax
   (up-chat-data-to-self "X coordinate: %d." myFirstPoint.x) ;prints 10
   (up-chat-data-to-self "Y coordinate: %d." myFirstPoint.y) ;prints 20
+
+  (up-set-precise-target-point <10,20>)  ; valid
+  (up-set-precise-target-point myFirstPoint)  ; also valid
 )
+
+There's also point math:
+
+point myFirstPoint
+
+(if
+  (true)
+=>
+  myFirstPoint := <10,20> + <2,3>  ; myFirstPoint variable now contains the value <12,23>
+  (up-chat-data-to-self "X coordinate: %d." myFirstPoint.x) ;prints 12
+  (up-chat-data-to-self "Y coordinate: %d." myFirstPoint.y) ;prints 23
+  
+  myFirstPoint := -myFirstPoint
+  (up-chat-data-to-self "X coordinate: %d." myFirstPoint.x) ;prints -12
+  (up-chat-data-to-self "Y coordinate: %d." myFirstPoint.y) ;prints -23
+
+  myFirstPoint := myFirstPoint + <2,3>
+  (up-chat-data-to-self "X coordinate: %d." myFirstPoint.x) ;prints -10
+  (up-chat-data-to-self "Y coordinate: %d." myFirstPoint.y) ;prints -20
+
+  myFirstPoint := myFirstPoint *100
+  (up-chat-data-to-self "X coordinate: %d." myFirstPoint.x) ;prints -1000
+  (up-chat-data-to-self "Y coordinate: %d." myFirstPoint.y) ;prints -2000
+
+  myFirstPoint := myFirstPoint /100
+  (up-chat-data-to-self "X coordinate: %d." myFirstPoint.x) ;prints -10
+  (up-chat-data-to-self "Y coordinate: %d." myFirstPoint.y) ;prints -20
+)
+
+Points can be summed/subtracted together or multiplied by a scalar (integer)
+
+
 
