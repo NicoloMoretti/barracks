@@ -11,62 +11,40 @@ Just like a .per file, a .brk (barracks file extension) is read top to bottom ev
 ```text
 
 (defrule
-
   condition
-  
 =>
-
   body/actions
-  
 )
 
 .
-
 .
-
 .
-
 v
 
 
 (defrule
-
   condition
-  
 =>
-
   body/actions
-  
 )
 
 
-
 .
-
 .
-
 .
-
 v
 
 (defrule
-
-  condition
-  
+  condition 
 =>
-
   body/actions
-  
 )
 
 
 
 .
-
 .
-
 .
-
 v
 
 
@@ -78,60 +56,39 @@ In Barracks regular "defrules" have been replaced by "if" blocks.
 They look like this:
 
 (if
-
   condition
-  
 =>
-
   body/actions
-  
 )
 
 .
-
 .
-
 .
-
 v
 
 
 (if              <-     Notice: the "defrule" keyword has been replaced by "if"
-
   condition
-  
 =>
-
   body/actions
-  
 )
 
 
 .
-
 .
-
 .
-
 v
 
 (if
-
   condition
-  
 =>
-
   body/actions
-  
 )
 
 
 .
-
 .
-
 .
-
 v
 
 ....
