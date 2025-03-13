@@ -743,6 +743,8 @@ This property has been mantained in barracks.
 
 .per required to pair logical operators in this way :
 
+```text
+
 (or
   cond 1
   (
@@ -751,9 +753,13 @@ This property has been mantained in barracks.
   )
 )
 
+```
+
 This is because and/or accepted maximum two arguments, barracks allows for more
 
 For example, this.per:
+
+```text
 
 (or
   cond 1
@@ -766,7 +772,11 @@ For example, this.per:
   )
 )
 
+```
+
 In barracks looks like this:
+
+```text
 
 (or
   cond 1
@@ -775,11 +785,18 @@ In barracks looks like this:
   cond 4
 )
 
+```
+
 Only the operators and/or/not are supported.
 As of now a 'not' would look like this
+
+```text
+
 (not
   cond 1
 )
+
+```
 
 In .per conditions inside logical groupings do NOT shortcircuit, meaning that in an AND for example, if one condition was false, the others would still be checked. This behavior has been kept for .brk
 
@@ -787,10 +804,14 @@ In .per conditions inside logical groupings do NOT shortcircuit, meaning that in
 
 SNs can be easly read and modified by doing
 
+```text
+
 (
   sn-example-sn-name := 30
   sn-example-sn-name := sn-example-sn-name := 30 +1
 )
+
+```
 
 ## Commands
 
@@ -810,9 +831,13 @@ Second change:
 
   Example:
 
-  (
-    (up-chat-data-to-self "This is my military population : %d !" (up-get-fact military-population) )
-  )
+```text
+
+(
+  (up-chat-data-to-self "This is my military population : %d !" (up-get-fact military-population) )
+)
+
+```
 
   Of course it's up to you if and when you wanna nest them.
 
@@ -828,13 +853,19 @@ The name of the function comes right before the paranthesis that will contain th
 
 Example:
 
+```text
+
 (
   (up-chat-data-to-self "The biggest number is : %d !" max(12, 60) )
 )
 
+```
+
 Notice that parameters inside function are separated by a comma ',' too!
 
 Let's define a new custom function, which is a bit like a custom command made out of other basic commands:
+
+```text
 
 func void updateGathererPercentages(int food, int wood, int gold, int stone) (
   sn-food-gatherer-percentage := food
@@ -843,11 +874,20 @@ func void updateGathererPercentages(int food, int wood, int gold, int stone) (
   sn-stone-gatherer-percentage := stone
 )
 
+```
+
 If we wanted to use our new function we could do:
+
+```text
 
 (
   updateGathererPercentages(50, 30, 10, 10)
 )
+
+```
+
+> [!NOTE]  
+> Functions are executed **only** when called, they are not part of the regular sequential stream of 'rules'.
 
 > [!TIP]  
 > Functions can be defined both before or after their first use in the file, and can interact with global variables defined both before or after their own definition.
@@ -869,6 +909,7 @@ The parameters will be properly defined local variables inside the function, whi
 
 If we want to define a function that returns a number, we must use the 'return' keyword whenever we want the function to end and return a value.
 
+```text
 
 func int calculatesSomethingCrazy(int a, int b, int c) (
   return a * b * c - 100 * a
@@ -878,12 +919,16 @@ func int calculatesSomethingCrazy(int a, int b, int c) (
   int numberINeeded = calculatesSomethingCrazy(10,20,30)
 )
 
+```
+
 Notice that in the function definition we specified 'int' instead of 'void'
 
 > [!TIP]  
 > The 'return' keyword is a bit like the equivalent of 'break' in loops for function. Encountering a "return" can end a function early. The return keyword is not necessary for 'void' functions, but can be used without arguments to break out of the function earlier. This is often used to simplify code.
 
 Example of using 'return' to exit function:
+
+```text
 
 func void amIHungry(int hunger) (
   (if
@@ -899,9 +944,11 @@ func void amIHungry(int hunger) (
   amIHungry(29)
 )
 
-
+```
 
 Functions can call other functions inside of them, or even themeselves!
+
+```text
 
 func int factorial(int n) (
     (if 
@@ -915,6 +962,12 @@ func int factorial(int n) (
     return 0
 )
 
+```
+
+
+> [!WARNING]  
+> As of now only native functions such as max/min/abs can be used inside conditions. This is an unfortunate current limitation of barracks.
+
 ## disable-self
 
 disable-self is still here and has been upgraded to disable it's block and all of it's children block!
@@ -922,11 +975,15 @@ It's been promoted to a keyword like 'return', 'break', 'continue', so it droppe
 
 More importantly you are now required to put it at the start of the block it has to disable:
 
+```text
+
 (
   disable-self
   ; stuff
   ; stuff
 )
+
+```
 
 In this way, when you have long blocks with many child blocks nested inside, it's immedietly clear that the everything is subject to 'disable-self', if you don't see it immedietly, it's not there.
 
@@ -934,12 +991,18 @@ In this way, when you have long blocks with many child blocks nested inside, it'
 
 pre-processor constants can be defined in the global scope by doing
 
+```text
+
 const PI 314
+
+```
 
 ## load-if
 
 load-ifs still work the same way as .per.
 One important note is that sometimes it's necessary to declare parameters for later, for example, in .per we would do:
+
+```text
 
 #load-if-defined AZTEC-CIV	
     (defconst scout-type -267)	;Eagle warrior line
@@ -955,10 +1018,14 @@ One important note is that sometimes it's necessary to declare parameters for la
 #end-if	
 #end-if
 
+```
+
 But barracks would refuse to let you use 'scout-type' inside the commands you want to, since it would tell you the constant is a number and not a parameter containing the unit line.
 
 To avoid that you have to do define a parameter variable:
 
+
+```text
 
 param scout-type := scout-cavalry-line
 
@@ -975,6 +1042,8 @@ param scout-type := scout-cavalry-line
 #end-if	
 #end-if	
 #end-if
+
+```
 
 'param' varaibles must be initialized when defined to make clear what parameter class they will contain.
 For now parameters can only be declared and changed in the global scope, they are actaully compiled down to defconsts in .per... a quick patchwork.
