@@ -832,3 +832,99 @@ More importantly you are now required to put it at the start of the block it has
 )
 
 In this way, when you have long blocks with many child blocks nested inside, it's immedietly clear that the everything is subject to 'disable-self', if you don't see it immedietly, it's not there.
+
+## constants
+
+pre-processor constants can be defined in the global scope by doing
+
+const PI 314
+
+## load-if
+
+load-ifs still work the same way as .per.
+One important note is that sometimes it's necessary to declare parameters for later, for example, in .per we would do:
+
+#load-if-defined AZTEC-CIV	
+    (defconst scout-type -267)	;Eagle warrior line
+#else	
+#load-if-defined INCAN-CIV	
+    (defconst scout-type -267)	
+#else	
+#load-if-defined MAYAN-CIV	
+    (defconst scout-type -267)	
+#else	
+    (defconst scout-type -286)	;Scout cavalry line			
+#end-if	
+#end-if	
+#end-if
+
+But barracks would refuse to let you use 'scout-type' inside the commands you want to, since it would tell you the constant is a number and not a parameter containing the unit line.
+
+To avoid that you have to do define a parameter variable:
+
+
+param scout-type := scout-cavalry-line
+
+; the "scout-type" variable will now accecept only other "unit lines" inside of it, and will be available to be used in all commands that accept such type of parameter
+
+#load-if-defined AZTEC-CIV	
+    scout-type :=  eagle-warrior-line
+#else	
+#load-if-defined INCAN-CIV	
+    scout-type :=  eagle-warrior-line
+#else	
+#load-if-defined MAYAN-CIV	
+    scout-type :=  eagle-warrior-line	
+#end-if	
+#end-if	
+#end-if
+
+'param' varaibles must be initialized when defined to make clear what parameter class they will contain.
+For now parameters can only be declared and changed in the global scope, they are actaully compiled down to defconsts in .per... a quick patchwork.
+
+Inside load-ifs it's illegal to define new variables, since barracks cannot be sure about what will actually happen at compile time.
+load-ifs can contain any kind of blocks (if/else/elif/while/blocks), they are just like .per.
+
+## Default constants
+
+All default constants (parameters definition...) are atuomatically imported.
+There were some missing ones that I had to invent names for (since I couldn't find a convention, and i had to keep the commands type-safe):
+
+ActionId  -1 -> actionid-any
+OrderId -1 -> orderid-any
+AttackStance -1 -> stance-unchanged
+Formation -1 -> formation-unchanged
+
+## Removed commands
+
+Some commands have been permanently removed in barracks because of contrasting philosophy with the language.
+
+Removed commands:
+
+goal
+set-goal
+up-modify-goal
+up-compare-goal
+
+set-strategic-number
+strategic-number
+up-modify-sn
+up-compare-sn
+
+up-modify-flag
+up-compare-flag
+
+up-add-point
+up-copy-point
+
+up-set-indirect-goal
+up-get-indirect-goal
+
+up-get-rule-id
+up-jump-direct
+up-jump-dynamic
+up-jump-rule
+
+xs-script-call (might return in I don't find a better way to use it)
+
+up-get-search-state
