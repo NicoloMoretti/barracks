@@ -1233,7 +1233,7 @@ up-jump-direct
 up-jump-dynamic
 up-jump-rule
 
-xs-script-call (might return in I don't find a better way to use it)
+xs-script-call (might return if I don't find a better way to use it)
 
 up-get-search-state
 
