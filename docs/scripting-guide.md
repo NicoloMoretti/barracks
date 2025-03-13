@@ -144,17 +144,25 @@ Now, if we wante to print the result of an arithmetic expressions we can do:
 ```
 Which will print "My number: 11."
 
+
 Mathematic expressions can be of any length.
+
 Supported operators are +,-,*,/,%, and '()' parenthesis for grouping for precedence.
+
 Standard operators precedence is applied.
 
+
 Notice: the division operator '/' defaults to truncated integer division. Example: 8/7 results in 0.
+
 It previously used to be "z/" in .per, but since rounding division was bugged and unexpected compared to any other programming language, I decided to default to truncated division.
+
 If you still wish to round you can use the additional operator '~/' which applies the bugged default .per division. Example: 8~/7 results in 1.
+
 
 ## Saving and reading values from memory
 
 The goals array has been removed!
+
 If we want to save the result of a calculation we'll need to use a variable:
 
 ```text
@@ -172,9 +180,12 @@ int myVariable
 ```
 
 We created a new variable of name "myVariable" and of type "int".
+
 A variable is like a named box to store values in and to read them at a later time, like a goal on the goals array.
+
 The type "int" means that the variable can only contain a value of type integer.
-when we use the assignment operator ':=':
+
+When we use the assignment operator ':=':
 1. First the right hand side will be resolved to a number, so "-12 +3" will result in -9
 2. Then the result is saved into the left hand side, in this case "myVariable"
 
@@ -321,6 +332,7 @@ Barracks introduces 'else' blocks
 ```
 
 If the condition is true, then the body of the 'if' will be be executed, *else* the body of the else will be executed.
+
 If the conditions was true, the 'else' 's body would be skipped.
 
 ```text
@@ -402,6 +414,7 @@ You can put as much nesting as you want, but it will still cost as many defrules
 ## elif
 
 There is one common structure that might occur when nesting 'if' and 'else' blocks:
+
 (this might look confusing)
 
 ```text
@@ -471,6 +484,7 @@ A while loop allows to loop over a section of code based on a looping condition.
 ```
 
 When the while block is first encountered, the condition is checked. If the conditions results true, then the body is exectued. After the body is executed, the code jumps back to the condition, and the process is repeated.
+
 Whenever the conditions results false, the body is skipped and the code resumes executions to after the while block.
 
 ```text
@@ -580,7 +594,9 @@ This will skip the printing of "3"
 
 
 Variables have a 'scope'.
+
 For now we only say variables declared outside of blocks, in the 'global' scope.
+
 But we could have also declare variables inside a block:
 
 ```text
@@ -623,13 +639,19 @@ int gloabalVariable
 ```
 
 Global variables are the only ones that can save data between multiple scripts passes throghout the whole game.
+
 Local variables exists in the block they are declared in and its children blocks.
 
+
 You cannot declare two variables with the same name in exactly the same scope.
+
 However since local variables don't exist anymore outside their scope, you can reuse their names
 
+
 The programming advice is that variables should exist for as short as possible and close to where they are used, and made global only if they are used to store data through multiple script passes or all around the code.
+
 In this way you will not be greeted with a (too) huge wall of text of variables declrations when you open a .brk file, and it will be easier to track what a variable is for.
+
 
 Shadowing is also supported:
 
@@ -653,7 +675,9 @@ int volume := 11
 
 Basically, in an inner scope you can declare a variable with the same name as one in the outside scope, and it will temporarly 'shadow' the more global one, until it's destroyed.
 
+
 Inner variables can be declared and initialized in one line:
+
 
 ```text
 
@@ -682,10 +706,14 @@ Single line comments are supported with ';' Multiline comments are also supporte
 
 ```
 
+
 ## conditions
 
+
 Conditions now allow for easy comparisons with operators <,>,<=,=>,==,!=
+
 The left hand side and right hand side resolve types automatically and also resolve expressions if necessary
+
 
 ```text
 
@@ -737,9 +765,12 @@ Just like in .per, multiple conditions are automatically put in an AND
 condition 1, 2 and 3 are all in AND, if one is false, the body will be skipped.
 
 Not only that, but it might be lesser know that in .per conditions in there 'shorcircuit', meaning that if condition 2 was false, condition 3 would outright be skipped.
+
 This property has been mantained in barracks.
 
+
 ### Logical operators
+
 
 .per required to pair logical operators in this way :
 
@@ -756,6 +787,7 @@ This property has been mantained in barracks.
 ```
 
 This is because and/or accepted maximum two arguments, barracks allows for more
+
 
 For example, this.per:
 
@@ -788,7 +820,9 @@ In barracks looks like this:
 ```
 
 Only the operators and/or/not are supported.
+
 As of now a 'not' would look like this
+
 
 ```text
 
@@ -799,6 +833,7 @@ As of now a 'not' would look like this
 ```
 
 In .per conditions inside logical groupings do NOT shortcircuit, meaning that in an AND for example, if one condition was false, the others would still be checked. This behavior has been kept for .brk
+
 
 ## Strategic Numbers
 
@@ -816,18 +851,24 @@ SNs can be easly read and modified by doing
 ## Commands
 
 Commands still work mostly the same as .per.
-First change:
+
+1. First change:
+
   They drop all the g: c: s:
-Second change:
+  
+2. Second change:
+
   If the command used to change goals, now it doesn't, and instead resolves to a value
-  For exemple, (up-lerp-tiles <Point1> <Point2> <Value>) will not modify Point1
-  If you whish to use the new calculated point, you can do
+  For exemple, (up-lerp-tiles <Point1> <Point2> <Value>) will not modify Point1.
+  
+  If you whish to use the new calculated point, you can do:
   
   aVariablename := (up-lerp-tiles <Point1> <Point2> <Value>) + <2,19>
 
   For example here we save the calculated point after adding an offset to it, and we can still use both point1 and point2 for further computations without needing to save them in temporary goals.
 
   Since commands resolves to values, they can be nested inside each other to act as parameters of other commands if desired.
+
 
   Example:
 
@@ -847,9 +888,13 @@ Second change:
 ## Functions
 
 In barracks it's possible to define custom "functions".
+
 There are 3 native functions already implemented by default: min(), max(), abs().
+
 Functions are similar to commands, but the syntax is slightly different.
+
 The name of the function comes right before the paranthesis that will contain the arguments.
+
 
 Example:
 
@@ -893,13 +938,19 @@ If we wanted to use our new function we could do:
 > Functions can be defined both before or after their first use in the file, and can interact with global variables defined both before or after their own definition.
 
 
+
 This function call will execute the code inside the block of it's own definition.
+
 Let's take a closer look to the definition syntax:
 
+
 The keyword "func" denotes the start of a function definition, the second words is the return type, if it had been 'int' it would have meant that the function would have returned/resolved to a value, 'void' means that it doesn't return a number or anything really.
+
 Then, after the return type, we must specify the name of the new function, followed by '(', some *facultative* parameters, and a closing ')'. then we open a new '(' and define the actual body of the function, what it has to do when called, and when we are done we close it with a ')'.
 
+
 We can define a function that takes any amount of parameters, 0, 1, 2, etc..., we must specify a type for each parameter and name to reference it when we write the body of the function.
+
 
 The parameters will be properly defined local variables inside the function, which will shadow eventual variables of the same name in the scope the function has been called in, meaning we don't have to worry about conflicting naming.
 
@@ -968,9 +1019,12 @@ func int factorial(int n) (
 > [!WARNING]  
 > As of now only native functions such as max/min/abs can be used inside conditions. This is an unfortunate current limitation of barracks.
 
+
 ## disable-self
 
+
 disable-self is still here and has been upgraded to disable it's block and all of it's children block!
+
 It's been promoted to a keyword like 'return', 'break', 'continue', so it dropped it's parenthesis.
 
 More importantly you are now required to put it at the start of the block it has to disable:
@@ -999,7 +1053,9 @@ const PI 314
 
 ## load-if
 
+
 load-ifs still work the same way as .per.
+
 One important note is that sometimes it's necessary to declare parameters for later, for example, in .per we would do:
 
 ```text
@@ -1021,6 +1077,7 @@ One important note is that sometimes it's necessary to declare parameters for la
 ```
 
 But barracks would refuse to let you use 'scout-type' inside the commands you want to, since it would tell you the constant is a number and not a parameter containing the unit line.
+
 
 To avoid that you have to do define a parameter variable:
 
@@ -1048,12 +1105,15 @@ param scout-type := scout-cavalry-line
 'param' varaibles must be initialized when defined to make clear what parameter class they will contain.
 For now parameters can only be declared and changed in the global scope, they are actaully compiled down to defconsts in .per... a quick patchwork.
 
+
 Inside load-ifs it's illegal to define new variables, since barracks cannot be sure about what will actually happen at compile time.
 load-ifs can contain any kind of blocks (if/else/elif/while/blocks), they are just like .per.
 
 ## Default constants
 
+
 All default constants (parameters definition...) are atuomatically imported.
+
 There were some missing ones that I had to invent names for (since I couldn't find a convention, and i had to keep the commands type-safe):
 
 ActionId  -1 -> actionid-any
