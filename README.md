@@ -76,4 +76,4 @@ Remember you can use the arrow keys to browse previously typed commands if you w
 Also note that if you use Visual Studio Code, for example, it comes with an integrated terminal window.
 
 
-To learn how to code in Barracks you can read the [documentation](docs/scripting-guide.md) available under /docs/.
+To learn how to code in Barracks you can read the [scripting guide](docs/scripting-guide.md) available under /docs/.
