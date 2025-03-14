@@ -789,11 +789,9 @@ Inner variables can be declared and initialized in one line:
 
 ```text
 
-(if
-  true
-=>
+(
   int myVariable := 17
-  (up-chat-data-to-self "This has indeed been initialized : %d." myVariable) ; prints 17
+  (up-chat-data-to-self "This var has indeed been initialized : %d." myVariable) ; prints 17
 )
 
 ```
