@@ -31,6 +31,12 @@ sudo ./install.sh
 
 If it worked, you are done.
 
+You can try in the terminal:
+```text
+barracks --version
+```
+If you see the version of Barracks displayed, it's set up correctly!
+
 
 ### Manual installation instructions:
 
