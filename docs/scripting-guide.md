@@ -761,12 +761,15 @@ Shadowing is also supported:
 ```text
 
 ; How loud is the sound?
-int volume := 11
+int volume
+(
+  volume := 11
+)
 
 
 ; Calculate size of 3x4x5 cuboid.
 (
-  int volume = 3 * 4 * 5
+  int volume := 3 * 4 * 5
   (up-chat-data-to-self "The cube has a volume of : %d." volume) ; prints 3 * 4 * 5
 )
 
@@ -776,8 +779,10 @@ int volume := 11
 
 ```
 
-Basically, in an inner scope you can declare a variable with the same name as one in the outside scope, and it will temporarly 'shadow' the more global one, until it's destroyed.
+Basically, in an inner scope you can declare a variable with the same name as one in *an* outer scope, and it will temporarly 'shadow' the more global one, until the local one is destroyed (when it's scope ends).
 
+
+#### Initialization
 
 Inner variables can be declared and initialized in one line:
 
@@ -792,6 +797,7 @@ Inner variables can be declared and initialized in one line:
 )
 
 ```
+
 
 ## disable-self
 
