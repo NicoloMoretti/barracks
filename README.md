@@ -63,7 +63,7 @@ You are free to set up things in a different way.
 
 After installation, Barracks is available for use from the terminal/cmd.
 
-First, create a file ending with a '.brk' extension. (If you are on Windows, be careful to not get something like '.brk.txt')
+First, create a file ending with a '.brk' extension. (If you are on Windows, be careful to not get something like '.brk.txt'. You should be able to change file extensions if you go in "file explorer options" -> "view" -> uncheck "hide extensions for known file types". Then just rename a file to change its extension)
 
 Then you can open a cmd (Windows) / terminal (linux) window, which is just an application that comes by default with your operative system, if you search for it you'll find it.
 
