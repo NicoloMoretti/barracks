@@ -65,9 +65,29 @@ After installation, Barracks is available for use from the terminal/cmd.
 
 First, create a file ending with a '.brk' extension. (If you are on Windows, be careful to not get something like '.brk.txt')
 
-Then you can open a cmd/terminal window, which is just an application that comes by default with your operative system, if you search for it you'll find it.
+Then you can open a cmd (Windows) / terminal (linux) window, which is just an application that comes by default with your operative system, if you search for it you'll find it.
 
 With your terminal open, write 'barracks' followed by a space, and then the path of your '.brk' file, which can be absolute, or relative if your terminal is already focused on a folder/directory.
+
+Here's an example of me compiling a file called 'test.brk' placed in my Downloads folder:
+
+Windows absolute path:
+
+<img src="https://github.com/user-attachments/assets/6e1e76a4-cf63-41ce-86b0-d29e91dc5e3e" width="45%" />
+
+Windows relative path:
+
+<img src="https://github.com/user-attachments/assets/734c1e16-cc73-489e-b6c2-66305d4fc63e" width="40%" />
+
+
+Linux absolute path:
+
+<img src="https://github.com/user-attachments/assets/f7b7f2f9-95dc-4d0e-9b13-14b2b4d9c06f" width="60%" />
+
+Linux relative path:
+
+<img src="https://github.com/user-attachments/assets/bb5a9db5-17fa-4a82-a23f-5e8fcee285bd" width="45%" />
+
 
 Hit enter and a '.per' file (and a '.ai' file) will be generated in the same location as the '.brk' file, with the same name, or eventual errors will be reported within the terminal.
 
