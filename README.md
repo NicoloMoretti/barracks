@@ -58,7 +58,7 @@ If it worked, you are done.
 
 2. Downalod the 'barracks' bash file as well.
 
-3. In the folder where you saved both of them, to put then under PATH quickly run:
+3. In the folder where you saved both of them, to put then under PATH quickly, run:
 ```text
 sudo mv ./barracks.jar /usr/bin/barracks.jar
 sudo mv ./barracks /usr/bin/barracks
