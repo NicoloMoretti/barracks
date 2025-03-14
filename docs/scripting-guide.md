@@ -329,7 +329,13 @@ Preprocessor's constants can be defined in the global scope by doing
 ```text
 
 const PI 314
-const GREATING-MESSAGE "Hello!"
+const GREATING-MESSAGE "Hello! Pi is: %d"
+
+(if
+    (true)
+=>
+    (up-chat-data-to-self GREATING-MESSAGE PI)
+)
 
 ```
 
