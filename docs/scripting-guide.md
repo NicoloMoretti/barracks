@@ -597,7 +597,7 @@ int i
 
 Will print 0,1,2,3,4
 
-Be careful of infinite loops! If the condition never becomes false, Aoe2 will crash.
+Beware of infinite loops! If the condition never becomes false, Aoe2 will crash.
 
 If needed, loops can be nested inside each other.
 
