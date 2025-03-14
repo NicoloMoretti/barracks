@@ -11,7 +11,7 @@ Code written in Barracks is automatically compiled down to .per files through th
 
 ### Automatic installation instructions:
 
-Will setup barracks to work from anywhere within the terminal.
+Will setup barracks to work from anywhere within the terminal/cmd.
 
 #### Automatic installation for **Windows**:
 
