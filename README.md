@@ -19,10 +19,12 @@ For easy use, I suggest:
 
 For **Windows**:
 Download the .jar file.
+
 Downalod the 'barrack.bat' file as well.
 
 For **Linux**:
 Download the .jar file.
+
 Downalod the 'barracks' bash file as well.
 
 Run:
