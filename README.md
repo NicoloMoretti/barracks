@@ -19,7 +19,7 @@ To launch it, you should have an up to date Java version installed on your PC, i
 
 https://www.oracle.com/java/technologies/downloads/#jdk23-windows
 
-If you already have Java, once you download the barracks.jar file, that's already enough to use it, just launch it through the terminal/cmd by doing "java -jar barracks.jar" in the folder with barracks.jar in.
+If you already have Java, once you download the barracks.jar file, that's already enough to use the compiler. Just launch it through the terminal/cmd by doing "java -jar barracks.jar" in the folder with barracks.jar in.
 
 However, that would be a bit inconvenient because you would have to type in a long command (java -jar barracks.jar), so I made a support bat/sh file to launch instead, that will in turn call the .jar for you, you just need to type "bar", press 'tab' on your keyboard, and your system will most likely complete the command for you.
 
