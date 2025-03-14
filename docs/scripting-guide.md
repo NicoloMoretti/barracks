@@ -1119,13 +1119,26 @@ If we want to define a function that returns a number, we must use the 'return' 
 
 ```text
 
+(
+  int numberINeeded := calculatesSomethingCrazy(10,20,30)
+  (up-chat-data-to-self "° %d" numberINeeded)
+)
+
 func int calculatesSomethingCrazy(int a, int b, int c) (
   return a * b * c - 100 * a
 )
 
 (
-  int numberINeeded = calculatesSomethingCrazy(10,20,30)
+  (up-chat-data-to-self "° %d" calculatesSomethingCrazy(10,10,10))
 )
+
+/*
+  Here I wanted to show that:
+    1. Functions can return data.
+    2. Functions can be called before their definition.
+    3. Just like commands, functions can be nested directly in places.
+    4. This is a .brk multiline-comment
+*/
 
 ```
 
