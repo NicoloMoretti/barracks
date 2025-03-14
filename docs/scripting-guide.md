@@ -450,30 +450,38 @@ V
 ## Nesting
 
 
-All, control structures, including 'if' 'else' and 'blocks' can be nested into each other in any combination:
+All control structures, including 'if' 'else' and 'blocks' (and 'elif' and 'while') can be nested into each other in any combination:
 
 ```text
 
 (if
-  ; condition 1
+    ; condition 1
 =>
-  ; some code that depends on condition1
-  (if
-    ; condition 2
-  =>
-    ; some code that depends on condition 1 AND condition 2
-  )
-  ; some code that depends on condition 1
-  (if
-    ; condition3
-  =>
-    ; some code that depends on condition 1 AND condition 3
-  )
+    ; some code that depends on condition1
+    ;
+    ;
+    (if
+        ; condition 2
+    =>
+        ; some code that depends on condition 1 AND condition 2
+        ;
+        ;
+    )
+    ; some code that depends on condition 1
+    ;
+    ;
+    (if
+        ; condition3
+    =>
+        ; some code that depends on condition 1 AND condition 3
+        ;
+        ;
+    )
 )
 
 ```
 
-You can put as much nesting as you want, but it will still cost as many defrules as it would to not do it. Use it only when it makes your code better.
+You can put as much nesting as you want, but it will still cost just as many defrules as it would to not do it. Use it only when it makes your code better.
 
 
 ## elif
