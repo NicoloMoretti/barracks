@@ -1104,7 +1104,7 @@ Functions can access global variables.
 
 > [!TIP]  
 > Functions are useful mostly for 2 reasons.
-> One is for reusable parts of code, if there are sections of code you write in the same way in multiple places, you might consider turning them into a function for readability and to allow to easily update all of those sections at the same time, by simply editing the function body. Otherwise, you'd manually need to adapt *all* of them and you might mess up accidentally.
+> One is for reusable parts of code: if there are sections of code you write in the same way in multiple places, you might consider turning them into a function for readability and to allow yourself to easily update all of those sections at the same time, by simply editing the function body. Otherwise, you'd manually need to adapt *all* of those similar code sections individually, and you might mess up accidentally.
 >
 > The second reason, which I think is more profound, is to abstract away sections of your code, turning it into a system of black boxes or a top down view, allowing to review your code faster and only focus on details of the parts that interest you right then.
 
