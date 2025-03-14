@@ -983,7 +983,7 @@ Commands still work mostly the same as .per.
   For example, (up-lerp-tiles \<Point1\> \<Point2\> \<Value\>) will not modify Point1 (or was it Point2? No need to remember it!).
 
   
-  If you whish to use the new calculated point, you can do:
+  If you whish to use the new calculated point, you can do (pseudo-code):
   
   aVariableName := (up-lerp-tiles \<Point1\> \<Point2\> \<Value\>) + \<2,19\>
 
