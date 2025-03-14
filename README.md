@@ -21,7 +21,7 @@ https://www.oracle.com/java/technologies/downloads/#jdk23-windows
 
 If you already have Java, once you download the barracks.jar file, that's already enough to use the compiler. Just launch it through the terminal/cmd by doing "java -jar barracks.jar" in the folder with barracks.jar in.
 
-However, that would be a bit inconvenient because you would have to type in a long command (java -jar barracks.jar), so I made a support bat/sh file to launch instead, that will in turn call the .jar for you, you just need to type "bar", press 'tab' on your keyboard, and your system will most likely complete the command for you.
+However, that would be a bit inconvenient because you would have to type in a long command (java -jar barracks.jar), so I made a support bat/sh file to launch instead, that will in turn call the .jar for you, you just need to type "bar", press 'tab' on your keyboard, and your system will most likely autocomplete the command for you.
 
 Finally, if you manage to get both files under PATH you will be able to call Barracks from anywhere in your system, just open a console and type "barracks" (or bar... something and autocomplete with tab).
 
