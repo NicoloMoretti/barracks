@@ -725,7 +725,7 @@ int gloabalVariable
   int localVariable
   gloabalVariable := 20
   localVariable := 100
-  (up-chat-data-to-self "My local variable is: %d." gloabalVariable) ; prints 20
+  (up-chat-data-to-self "My global variable is: %d." gloabalVariable) ; prints 20
   (up-chat-data-to-self "My local variable is: %d." localVariable) ; prints 100
   (
     (up-chat-data-to-self "My local variable is: %d." localVariable) ; prints 100, still exists here
@@ -733,13 +733,13 @@ int gloabalVariable
 )
 
 (
-  (up-chat-data-to-self "My local variable is: %d." gloabalVariable) ; prints 20
+  (up-chat-data-to-self "My global variable is: %d." gloabalVariable) ; prints 20
   (up-chat-data-to-self "My local variable is: %d." localVariable) ; ERROR! The local variable doesn't exists here!
 )
 
 ```
 
-Global variables persist across multiple script, whereas local variables exist only within their respective blocks, and get 'freed' or 'destroyed when the block they were declared in ends.
+Global variables persist across multiple script passes, whereas local variables exist only within their respective blocks, and get 'freed' or 'destroyed when the block they were declared in ends (finishes executing).
 
 Local variables exists in the block they are declared in and its children blocks.
 
