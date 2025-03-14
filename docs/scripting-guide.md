@@ -1308,7 +1308,7 @@ In an attempt to standardize things used often, they have been called:
 search-local-total, search-local-last, search-remote-total, search-remote-last
 
 
-You will always find them updated after a search (but not after manually modifying lists yourself), removing the command '(up-get-search-state)'.
+You will always find them updated when reading them, removing the command '(up-get-search-state)'.
 
 If you wish to save a previous search state value before a new search, copy the value of the search state you want into a support variable.
 
