@@ -305,7 +305,7 @@ point myFirstPoint
 
 ```
 
-Points can be summed/subtracted together or multiplied by a scalar (integer)
+Points can be summed/subtracted together or multiplied by a scalar (integer).
 
 
 #### Timers
