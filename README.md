@@ -35,7 +35,7 @@ For easy use, I suggest:
 
 Now, you can already use it by right clicking the folder where they are saved, opening a cmd there, typing something like "barr" and pressing 'tab' to autocomplete
 
-To check if it worked, type in the terminal:
+To check if it worked, type in the cmd, opened in the location where the files are saved:
 
 ```text
 barracks --version
