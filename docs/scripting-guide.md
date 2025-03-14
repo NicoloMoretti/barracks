@@ -861,9 +861,11 @@ int myVar
   (chat-to-all "No!")
 )
 
+; If you play with this snippet of code, remember to update what's printed too!
+
 ```
 
-Conditions allow to assign to variables like .per did, and a line that assigns to a variable resolves to a 'true' value
+Conditions allow to assign to variables like .per did, and a code line that assigns to a variable resolves to a 'true' value
 
 ```text
 
