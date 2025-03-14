@@ -11,7 +11,8 @@ Code written in Barracks is automatically compiled down to .per files through th
 
 The compiler is essentially a Java application, which can be downloaded directly (or compiled from source if preferred).
 There isn't a graphic interface, you are supposed to interact with it through the terminal, by executing it with a '.brk' file path as an argument.
-A '.per' will be generated in the same location as the '.brk' file, or eventual errors will be reported within the terminal.
+
+A '.per' file (and a '.ai' file) will be generated in the same location as the '.brk' file, or eventual errors will be reported within the terminal.
 
 ### Automatic installation instructions:
 
