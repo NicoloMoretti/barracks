@@ -14,7 +14,7 @@
 > But remember to both *save* and *recompile*, or you will run the old script again!
 
 > [!NOTE]  
-> Most examples here don't have 'disable-self' for simplicity's sake, that means you gotta have your finger ready and press F3 (or your pause button) pretty quick, or ignore printed outputs after the first script-pass.
+> Most examples here don't have 'disable-self' for simplicity's sake, that means you gotta have your finger ready and press 'F3' (or your pause button) pretty quickly, or ignore printed outputs after the first script-pass.
 
 > [!WARNING]  
 > Compiling a '.brk' (Barracks extension) will generate a '.per' file with the same name as the '.brk' one. Make sure you don't have any other '.per' file with the same name as the '.brk' you are compiling, or it will be permanently overwritten!
