@@ -978,8 +978,10 @@ Commands still work mostly the same as .per.
   
 2. Second change:
 
-  If the command used to change input goals, now it doesn't, and instead resolves to a value
-  For example, (up-lerp-tiles <Point1> <Point2> <Value>) will not modify Point1 (or was it Point2? No need to remember it!).
+  If the command used to change input goals, now it doesn't, and instead resolves to a value.
+  
+  For example, (up-lerp-tiles \<Point1\> \<Point2\> \<Value\>) will not modify Point1 (or was it Point2? No need to remember it!).
+
   
   If you whish to use the new calculated point, you can do:
   
