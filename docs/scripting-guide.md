@@ -1215,6 +1215,11 @@ func int factorial(int n) (
 
 load-ifs still work the same way as .per.
 
+Inside load-ifs it's *illegal* to define new **global** variables, so they must be defined outside beforehand.
+
+'load-ifs' can contain any kind of blocks (if/else/elif/while/blocks), but **not** function definitions.
+
+
 One important note is that sometimes it's necessary to declare parameters for later, for example, in .per we would do:
 
 ```text
@@ -1238,10 +1243,13 @@ One important note is that sometimes it's necessary to declare parameters for la
 But Barracks would refuse to let you use 'scout-type' inside the commands you want to, since it would tell you the constant is a number and not necessarily a parameter of class unit line.
 
 
+To avoid that you have to do define a parameter alias:
+
+
 #### Parameters
 
-To avoid that you have to do define a parameter variable:
 
+Parameters aliases can be defined with the 'param' keyword, in the global region of the code (outside control-structures):
 
 ```text
 
@@ -1267,11 +1275,11 @@ all commands that accept such type of parameter
 ```
 
 'param' varaibles must be initialized when defined to make clear what parameter class they will contain.
-For now, parameters can only be declared and changed in the global scope. They are actaully compiled down to defconsts in .per... a quick patchwork.
 
 
-Inside load-ifs it's illegal to define new variables, since Barracks cannot be sure about what will actually happen at compile time.
-load-ifs can contain any kind of blocks (if/else/elif/while/blocks), they are just like .per.
+*As of now*, parameter aliases can only be declared and changed in the global scope (a 'load-if' is a conditionally loaded region of global scope, so it counts as allowed). 
+
+They are... a quick patchwork on my part.
 
 
 ## Default constants
