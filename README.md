@@ -28,7 +28,7 @@ To check if it worked, type in the terminal:
 barracks --version
 ```
 
-If you see the version of barracks, it's set up correctly!
+If you see the version of Barracks displayed, it's set up correctly!
 
 #### For **Linux**:
 1. Download the .jar file.
@@ -47,7 +47,7 @@ To check if it worked, type in the terminal:
 barracks --version
 ```
 
-If you see the version of barracks, it's set up correctly!
+If you see the version of Barracks displayed, it's set up correctly!
 
 to download the 'barracks' shell script as well, keep it next to the Java application, and launch that instead by simply typing 'barracks' in the folder where both files are contained.
 Finally, to make it possible to launch barracks from wherever in your system, indipendently of it's storage location, I would suggest to put both the 'barracks' shell script and the Java file in a directory that your PC recognizes as under 'PATH'.
