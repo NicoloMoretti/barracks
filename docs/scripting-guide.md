@@ -1032,6 +1032,13 @@ Example:
 
 (
   (up-chat-data-to-self "The biggest number is : %d !" max(12, 60) )
+  (up-chat-data-to-self "The smallest number is : %d !"  min(12, 60))
+
+  (up-chat-data-to-self "The absolute value of -100 is : %d !" abs(-100))
+  (up-chat-data-to-self "The absolute value of +100 is still: %d !" abs(100))
+
+  (up-chat-data-to-self "The biggest number plus 3 : %d !"   max(12, 60) + 3)
+  (up-chat-data-to-self "The biggest number plus the aboslute value of -100 : %d !"   max(12, 60) + abs(-100))
 )
 
 ```
