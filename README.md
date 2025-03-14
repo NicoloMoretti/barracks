@@ -35,7 +35,7 @@ If you see the version of barracks, it's set up correctly!
 
 2. Downalod the 'barracks' bash file as well.
 
-3. Run:
+3. In the folder where you saved both of them, run:
 ```text
 sudo mv ./barracks.jar /usr/bin/barracks.jar
 sudo mv ./barracks /usr/bin/barracks
