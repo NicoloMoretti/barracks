@@ -10,7 +10,9 @@ import java.util.List;
 
 public class Barracks {
 	
-	private static final int barracksVersion = 11;
+	private static final int barracksVersionMajor = 1;
+	private static final int barracksVersionMinor = 0;
+	private static final int barracksVersionPatch = 0;
 	
 	public static void main(String[] args) throws IOException {
 		translateSingleFile(args);
@@ -23,7 +25,7 @@ public class Barracks {
 		} else {
 			if (!args[0].endsWith(".brk")) {
 				if (args[0].equals("--version")) {
-					System.out.println("Installed Barracks version is: " + barracksVersion + " .");
+					System.out.println("Installed Barracks version is: " + barracksVersionMajor + "." + barracksVersionMinor + "." + barracksVersionPatch);
 					System.exit(67);
 				}
 				System.out.println("Expected a .brk file but got -> " + args[0]);
