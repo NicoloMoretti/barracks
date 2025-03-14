@@ -15,6 +15,20 @@ A '.per' will be generated in the same location as the '.brk' file, or eventual 
 
 ### Automatic installation instructions:
 
+#### Automatic installation for **Windows**:
+
+1. Downalod "Barracks_installation_Windows.zip".
+2. Extract the ZIP file. You should see three files inside the extracted folder.
+3. Right-click install.bat and select "Run as administrator".
+
+If it worked, you are done.
+
+You can try in the cmd:
+```text
+barracks --version
+```
+If you see the version of Barracks displayed, it's set up correctly!
+
 #### Automatic installation for **Linux**:
 
 1. Downalod "Barracks_installation_Linux.zip".
