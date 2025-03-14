@@ -985,7 +985,7 @@ Commands still work mostly the same as .per.
   
   If you whish to use the new calculated point, you can do:
   
-  aVariableName := (up-lerp-tiles <Point1> <Point2> <Value>) + <2,19>
+  aVariableName := (up-lerp-tiles \<Point1\> \<Point2\> \<Value\>) + \<2,19\>
 
   For example here we save the calculated point after adding an offset to it, and we can still use both point1 and point2 for further computations without needing to save them in temporary goals.
 
