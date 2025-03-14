@@ -164,11 +164,11 @@ Supported operators are +,-,*,/,%, and '()' parenthesis for grouping for precede
 Standard operators precedence is applied.
 
 
-Notice: the division operator '/' defaults to truncated integer division. Example: 8/7 results in 0.
+Notice: the division operator '/' defaults to truncated integer division. Example: 7/8 results in 0.
 
 It previously used to be "z/" in .per, but since rounding division was buggy and inconsistent compared to most other programming language, I decided to default to truncated division.
 
-If you still wish to round you can use the additional operator '\~/' which applies the buggy default .per division. Example: 8~/7 results in 1.
+If you still wish to round, you can use the additional operator '\~/' which applies the buggy default .per division. Example: 7~/8 results in 1.
 
 
 ## Saving and reading values from memory
@@ -336,7 +336,7 @@ Preprocessor's constants can be defined in the global scope by doing
 ```text
 
 const PI 314
-const GREATING-MESSAGE "Hello! Pi is: %d"
+const GREETING-MESSAGE "Hello! Pi is: %d"
 
 (if
     (true)
@@ -665,7 +665,7 @@ This will terminate the loop early.
 
 ### continue
 
-'continue' ends the *current* iteration of the innermost loop, jumping immedietly to the condition
+'continue' ends the *current* iteration of the innermost loop, jumping immediately to the condition
 
 ```text
 
@@ -699,7 +699,7 @@ This will skip the printing of "3"
 
 Variables have a 'scope'.
 
-For now we only saw variables declared outside of blocks, in the 'global' scope.
+Until now we only saw variables declared outside of blocks, in the 'global' scope.
 
 But we could have also declared variables inside a block:
 
@@ -772,7 +772,8 @@ int volume
 
 ; Calculate size of 3x4x5 cuboid.
 (
-  int volume := 3 * 4 * 5
+  int volume    ; defining a new local variable called volume
+  volume := 3 * 4 * 5
   (up-chat-data-to-self "The cube has a volume of : %d." volume) ; prints 3 * 4 * 5
 )
 
@@ -787,7 +788,7 @@ Basically, in an inner scope you can declare a variable with the same name as on
 
 #### Initialization
 
-Inner variables can be declared and initialized in one line:
+**Inner** variables can be declared and initialized in one line:
 
 
 ```text
@@ -819,7 +820,7 @@ More importantly you are now required to put it at the start of the block it has
 
 ```
 
-In this way, when you have long blocks with many child blocks nested inside, it's immediaetly clear that everything is subject to 'disable-self'. If you don't see it immediaetly, it's not there.
+In this way, when you have long blocks with many child blocks nested inside, it's immediately clear that everything is subject to 'disable-self'. If you don't see it immediately, it's not there.
 
 ## Comments
 
@@ -874,7 +875,7 @@ Conditions allow to assign to variables like .per did, and a code line that assi
 
 int myVar
 (if
-  myVar := 100
+  myVar := 100    ; notice that the main reason I made assignment ':=' and not just '=' is to not confuse it with '=='
 =>
   (chat-to-all "True!") ; prints True!
 )
@@ -890,7 +891,7 @@ Just like in .per, multiple conditions are automatically put in an AND
   ; condition 2
   ; condition 3
 =>
-  (chat-to-all "True!") ; prints True!
+  (chat-to-all "True!") ; prints True! if 1 and 2 and 3 are true
 )
 
 ```
@@ -968,7 +969,7 @@ As of now a 'not' would look like this
 In .per conditions inside logical groupings do NOT shortcircuit, meaning that in an AND for example, if one condition was false, the others would still be checked. This behavior has been kept for .brk
 
 > [!NOTE]  
-> If a logical grouping is very very big, Barracks will ask you to break it down into simpler parts, but it should happen only very rarely normally. 
+> If a logical grouping is very very big, Barracks will ask you to break it down into simpler parts, but normally it should happen only very rarely. 
 
 
 ## Commands
@@ -977,9 +978,13 @@ Commands still work mostly the same as .per.
 
 1. First change:
 
-  They drop all the g: c: s:
-  
+  They drop all the 'g:' 'c:' 's:'
+
 2. Second change:
+
+  Input parameter classes/types are checked for safety. For example, if a command asks for a 'TechId' and you insert a 'UnitId', Barracks will report your mistake.
+  
+3. Third change:
 
   If the command used to change input goals, now it doesn't, and instead resolves to a value.
   
@@ -990,7 +995,7 @@ Commands still work mostly the same as .per.
   
   aVariableName := (up-lerp-tiles \<Point1\> \<Point2\> \<Value\>) + \<2,19\>
 
-  For example here we save the calculated point after adding an offset to it, and we can still use both point1 and point2 for further computations without needing to save them in temporary goals.
+  For example, here we save the calculated point after adding an offset to it, and we can still use both point1 and point2 for further computations without needing to save them in temporary goals.
 
 
   Since commands resolves to values, they can be nested inside each other to act as parameters of other commands if desired.
@@ -1004,7 +1009,7 @@ Commands still work mostly the same as .per.
   (up-chat-data-to-self "This is my military population : %d !" (up-get-fact military-population) )
 )
 
-; delete your scout and see it goes from 1 -> 0 !
+; try delete your scout, and see it go from 1 -> 0 !
 
 ```
 
@@ -1136,7 +1141,7 @@ func int calculatesSomethingCrazy(int a, int b, int c) (
   Here I wanted to show that:
     1. Functions can return data.
     2. Functions can be called before their definition.
-    3. Just like commands, functions can be nested directly in places.
+    3. Just like commands, functions can be nested directly in other commands, or other functions as parameters
     4. This is a .brk multiline-comment
 */
 
@@ -1147,7 +1152,7 @@ Notice that in the function definition we specified 'int' instead of 'void'
 > [!TIP]  
 > The 'return' keyword is a bit like the equivalent of 'break' in loops for function. Encountering a "return" can end a function early. The return keyword is not necessary for 'void' functions, but can be used without arguments to break out of the function earlier. This is often used to simplify code.
 
-Example of using 'return' to exit function:
+Example of using 'return' to exit a function:
 
 ```text
 
@@ -1170,7 +1175,11 @@ func void amIHungry(int hunger) (
 > [!TIP]  
 > If a command or a function returns a 'point' data, then its x/y coordinate can be accessed instantly, for example:
 > 
-> int a := (up-bound-point <100,700>).x  is perfectly valid code. Same goes for functions, but as I'm currenly writing, I forgot to add it for functions.
+> int a := (up-bound-point <100,700>).x  is perfectly valid code.
+>
+> "up-bound-point" returns a point, we access its .x immediately and save it into a newly declare 'int a'.
+>  
+> Same goes for functions too, but as I'm currenly writing, I forgot to add this feature for functions.
 
 #### Recursion
 
@@ -1206,7 +1215,7 @@ func int factorial(int n) (
 
 
 > [!WARNING]  
-> Currently the maximum nesting depth of function calls is of a 1000 open at the same time. Could be less if you overflow the memory with temporary variables (~14K declared int variables or ~7k point variables existing at the same time, or something in between, though it's hard to use all that memory). Be mindful that each open function occupies temporary space in memory if it has local variables. Sometime I may remove the 1000 hard limit and make it infinite, but realistically it would probably crash for other reasons above 1000, I think. Just like Aoe2 can be made to crash with excessive loops, it can be made to crash with an excessive amount of function calls if they all are very complex.
+> Currently the maximum nesting depth of function calls is of a 1000 open at the same time. Could be less if you overflow the memory with temporary variables (~14K declared int variables or ~7k point variables existing at the same time, or something in between, though it's hard to use all that memory). Be mindful that each open function occupies temporary space in memory if it has local variables. Sometime in the future I may remove the 1000 hard limit and make it infinite, but realistically it would probably crash for other reasons above 1000, I think. Just like Aoe2 can be made to crash with excessive loops, it can be made to crash with an excessive amount of function calls if they all are very complex.
 > I don't know what the limit is, but unless you are trying to do crazy stuff, I figure it shouldn't break.
 
 
@@ -1243,7 +1252,7 @@ One important note is that sometimes it's necessary to declare parameters for la
 But Barracks would refuse to let you use 'scout-type' inside the commands you want to, since it would tell you the constant is a number and not necessarily a parameter of class unit line.
 
 
-To avoid that you have to do define a parameter alias:
+To avoid that you have to define a parameter alias:
 
 
 #### Parameters
@@ -1321,7 +1330,7 @@ If you wish to save a previous search state value before a new search, copy the 
 
 ## AIs communicating together
 
-Commands related to AIs communicating together are currenly disabled
+Commands related to AIs communicating together are currenly disabled.
 
 
 up-get-shared-goal
