@@ -69,7 +69,7 @@ Then you can open a cmd (Windows) / terminal (linux) window, which is just an ap
 
 With your terminal open, write 'barracks' followed by a space, and then the path of your '.brk' file, which can be absolute, or relative if your terminal is already focused on a folder/directory.
 
-Here's an example of me compiling a file called 'test.brk' placed in my Downloads folder:
+Here's an example of me compiling a file called 'example.brk' placed in my Downloads folder:
 
 Windows absolute path:
 
