@@ -15,6 +15,8 @@ A '.per' will be generated in the same location as the '.brk' file, or eventual 
 
 ### Automatic installation instructions:
 
+Will setup barracks to work from anywhere withing the terminal.
+
 #### Automatic installation for **Windows**:
 
 1. Downalod "Barracks_installation_Windows.zip".
