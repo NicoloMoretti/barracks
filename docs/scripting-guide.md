@@ -1200,8 +1200,8 @@ This is possible because a function call is not simply a jump to a zone of code,
 
 
 > [!WARNING]  
-> Currently the maximum nesting depth of function calls is of a 1000 open at the same time. Could be less if you overflow the memory with temporary variables (~14K declared int variables or ~7k point variables existing at the same time, or something in between). Be mindful that each open function occupies temporary space in memory if it has local variables. I could remove the 1000 hard limit and make it infinite, but realistically then it would crash for other reasons, I think. Just like Aoe2 can be made to crash with excessive loops, it can be made to crash with an excessive amount of function calls if they all are very complex.
-> I don't know what the limit is, but unless you were trying to crash or overflow it **on purpose**, I figure it shouldn't break ever.
+> Currently the maximum nesting depth of function calls is of a 1000 open at the same time. Could be less if you overflow the memory with temporary variables (~14K declared int variables or ~7k point variables existing at the same time, or something in between, though it's hard to use all that memory). Be mindful that each open function occupies temporary space in memory if it has local variables. Sometime I may remove the 1000 hard limit and make it infinite, but realistically it would probably crash for other reasons above 1000, I think. Just like Aoe2 can be made to crash with excessive loops, it can be made to crash with an excessive amount of function calls if they all are very complex.
+> I don't know what the limit is, but unless you are trying to do crazy stuff, I figure it shouldn't break.
 
 
 ## load-if
