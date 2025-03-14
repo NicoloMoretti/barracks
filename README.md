@@ -9,11 +9,6 @@ Code written in Barracks is automatically compiled down to .per files through th
 
 ## How to install it
 
-
-There isn't a graphic interface, you are supposed to interact with it through the terminal, by executing it with a '.brk' file path as an argument.
-
-A '.per' file (and a '.ai' file) will be generated in the same location as the '.brk' file, or eventual errors will be reported within the terminal.
-
 ### Automatic installation instructions:
 
 Will setup barracks to work from anywhere within the terminal.
@@ -66,6 +61,14 @@ You are free to set up things in a different way.
 
 ## Getting started
 
-Once you create a file with a .brk file extension, and you have the compiler installed, you just need to open a terminal window and launch Barracks with your .brk file path as argument.
+After installation, Barracks is available for use from the terminal/cmd.
+
+First, create a file ending with a '.brk' extension. (If you are on Windows be careful to not get something like '.brk.txt')
+
+Then you can open a cmd/terminal window, which is just an application that comes by default with your operative system, if you search for it you'll find it.
+
+With your terminal open, write 'barracks' followed by a space, and then the path of your '.brk' file, which can be absolute, or relative if your terminal is already focused on a folder/directory.
+
+A '.per' file (and a '.ai' file) will be generated in the same location as the '.brk' file, or eventual errors will be reported within the terminal.
 
 To learn how to code in Barracks you can consult the [documentation](docs/scripting-guide.md) available under /docs/.
