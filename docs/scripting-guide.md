@@ -1314,7 +1314,7 @@ In an attempt to standardize things used often, they have been called:
 <mark>search-remote-last</mark>
 
 
-You will always find them updated when reading them, removing the command '(up-get-search-state)'.
+You will always find them updated to the last search when reading them, removing the command '(up-get-search-state)'.
 
 If you wish to save a previous search state value before a new search, copy the value of the search state you want into a support variable.
 
