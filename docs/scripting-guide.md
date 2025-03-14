@@ -1172,9 +1172,10 @@ func void amIHungry(int hunger) (
 > 
 > int a := (up-bound-point <100,700>).x  is perfectly valid code. Same goes for functions, but as I'm currenly writing, I forgot to add it for functions.
 
-##### Recursion
+#### Recursion
 
-Functions can call other functions inside them, or even open new instances of themeselves!
+> [!TIP]  
+> Functions can call other functions inside them, or even open new instances of themeselves!
 
 ```text
 
@@ -1196,7 +1197,8 @@ func int factorial(int n) (
 
 ```
 
-This is possible because a function call is not simply a jump to a zone of code, but it's more akin to executing a new sub-program, which has it's own local memory variables and execution state.
+> [!TIP]  
+> This is possible because a function call is not simply a jump to a zone of code, but it's more akin to executing a new sub-program, which has it's own local memory variables and execution state.
 
 
 > [!WARNING]  
