@@ -134,6 +134,8 @@ Let's chat a number in .per and in .brk:
 
 Notice: we dropped the 'c:', numbers are resolved automatically to their integer value
 
+(be careful about the 'if' vs 'defrule'!)
+
 Now, if we wanted to print the result of an arithmetic expression, we can do:
 
 ```
