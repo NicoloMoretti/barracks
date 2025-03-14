@@ -1153,7 +1153,7 @@ Example of using 'return' to exit function:
 
 func void amIHungry(int hunger) (
   (if
-    hunger > 30
+    hunger < 30
   =>
     (chat-to-all "I'm not hungry!")
     return
