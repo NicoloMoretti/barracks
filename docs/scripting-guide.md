@@ -1174,7 +1174,7 @@ func void amIHungry(int hunger) (
 
 #### Recursion
 
-> [!TIP]  
+> [!IMPORTANT]  
 > Functions can call other functions inside them, or even open new instances of themeselves!
 
 ```text
@@ -1197,7 +1197,7 @@ func int factorial(int n) (
 
 ```
 
-> [!TIP]  
+> [!IMPORTANT]  
 > This is possible because a function call is not simply a jump to a zone of code, but it's more akin to executing a new sub-program, which has it's own local memory variables and execution state.
 
 
