@@ -23,7 +23,7 @@ If you already have Java, once you download the barracks.jar file, that's alread
 
 However, that would be a bit inconvenient because you would have to type in a long command (java -jar barracks.jar), so I made a support bat/sh file to launch instead, that will in turn call the .jar for you, you just need to type "bar", press 'tab' on your keyboard, and your system will most likely autocomplete the command for you.
 
-Finally, if you manage to get both files under PATH you will be able to call Barracks from anywhere in your system, just open a console and type "barracks" (or bar... something and autocomplete with tab).
+Finally, if you also manage to get both files under PATH you will be able to call Barracks from anywhere in your system, just open a console and type "barracks" (or bar... something and autocomplete with tab).
 
 
 For easy use, I suggest:
