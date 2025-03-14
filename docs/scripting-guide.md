@@ -1235,7 +1235,7 @@ One important note is that sometimes it's necessary to declare parameters for la
 
 ```
 
-But Barracks would refuse to let you use 'scout-type' inside the commands you want to, since it would tell you the constant is a number and not a parameter containing the unit line.
+But Barracks would refuse to let you use 'scout-type' inside the commands you want to, since it would tell you the constant is a number and not necessarily a parameter of class unit line.
 
 
 #### Parameters
