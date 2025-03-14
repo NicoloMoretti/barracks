@@ -13,6 +13,23 @@ The compiler is essentially a Java application, which can be downloaded directly
 There isn't a graphic interface, you are supposed to interact with it through the terminal, by executing it with a '.brk' file path as an argument.
 A '.per' will be generated in the same location as the '.brk' file, or eventual errors will be reported within the terminal.
 
+### Automatic installation instructions:
+
+#### Automatic installation for **Linux**:
+
+1. Downalod "Barracks_installation_Linux.zip"
+2. Unzip it, go inside the extracted folder, you should see three files
+3. Right click an empty space in the folder, from the drop down menu select "Open in Terminal"
+4. Copy past this command and hit enter:
+
+```text
+chmod +x install.sh
+sudo ./install.sh
+```
+
+If it worked, you are done.
+
+
 ### Manual installation instructions:
 
 To launch it, you should have an up to date Java version installed on your PC, if not you can download it from the Oracle site for example (select your right OS)
