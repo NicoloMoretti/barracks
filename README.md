@@ -63,59 +63,6 @@ The automatic installation is just to automatically place the .jar file somewher
 
 You are free to set up things in a different way.
 
-However, that would be a bit inconvenient because you would have to type in a long command (java -jar barracks.jar), so I made a support bat/sh file to launch instead, that will in turn call the .jar for you, you just need to type "bar", press 'tab' on your keyboard, and your system will most likely autocomplete the command for you.
-
-Finally, if you also manage to get both files under PATH, you will be able to call Barracks from anywhere in your system, just open a console and type "barracks" (or bar... something and autocomplete with tab).
-
-
-For easy use, I suggest:
-
-#### Manual installation for **Windows**:
-1. Download the .jar file.
-
-2. Downalod the 'barrack.bat' file as well.
-
-Now, you can already use it by right clicking the folder where they are saved, opening a cmd there, typing something like "barr" and pressing 'tab' to autocomplete
-
-To check if it worked, type in the cmd, opened in the location where the files are saved:
-
-```text
-barracks --version
-```
-
-If you see the version of Barracks displayed, it's set up correctly!
-
-However, like this you will need to have both files wherever you plan to save script/launch your CMD from, so I would suggest you to get them under PATH somehow. If you feel spartan just drop them in System32 and that will suffice.
-
-After you are done try again:
-
-```text
-barracks --version
-```
-
-If it worked, you are done.
-
-#### Manual installation for **Linux**:
-1. Download the .jar file.
-
-2. Downalod the 'barracks' bash file as well.
-
-3. In the folder where you saved both of them, to put then under PATH quickly, run:
-```text
-sudo mv ./barracks.jar /usr/bin/barracks.jar
-sudo mv ./barracks /usr/bin/barracks
-```
-
-So they will end up in /usr/bin/ which is under PATH
-
-To check if it worked, type in the terminal:
-
-```text
-barracks --version
-```
-
-If you see the version of Barracks displayed, it's set up correctly!
-
 
 ## Getting started
 
