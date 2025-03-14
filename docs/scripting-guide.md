@@ -354,9 +354,16 @@ SNs can be easily read and modified by doing
 
 ```text
 
-(
-  sn-example-sn-name := 30
-  sn-example-sn-name := sn-example-sn-name +1  ; it will now be equal to 31
+(if
+    true
+=>
+    sn-camp-max-distance := 30
+
+    (up-chat-data-to-self "Value: %d" sn-camp-max-distance)
+
+    sn-camp-max-distance := sn-camp-max-distance +1  ; increased by 1
+
+    (up-chat-data-to-self "Value: %d" sn-camp-max-distance)
 )
 
 ```
