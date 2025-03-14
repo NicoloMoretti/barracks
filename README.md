@@ -69,7 +69,7 @@ Then you can open a cmd/terminal window, which is just an application that comes
 
 With your terminal open, write 'barracks' followed by a space, and then the path of your '.brk' file, which can be absolute, or relative if your terminal is already focused on a folder/directory.
 
-A '.per' file (and a '.ai' file) will be generated in the same location as the '.brk' file, or eventual errors will be reported within the terminal.
+Hit enter and a '.per' file (and a '.ai' file) will be generated in the same location as the '.brk' file, or eventual errors will be reported within the terminal.
 
 Remember you can use the arrow keys to browse previously typed commands if you want to recompile your script again, and 'tab' to autocomplete words in the terminal.
 
