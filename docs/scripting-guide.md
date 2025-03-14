@@ -800,7 +800,7 @@ Inner variables can be declared and initialized in one line:
 ## disable-self
 
 
-disable-self is still here and has been upgraded to disable its block and all of its child blocks!
+'disable-self' is still here, and has been *upgraded* to disable its block and all of its child blocks!
 
 It's been promoted to a keyword like 'return', 'break', 'continue', so it dropped it's parenthesis.
 
