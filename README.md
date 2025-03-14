@@ -15,7 +15,7 @@ A '.per' will be generated in the same location as the '.brk' file, or eventual 
 
 ### Instructions:
 
-To launch it, you should have an up to date Java version installed on your PC, if not you can download it from the Oracle site for example
+To launch it, you should have an up to date Java version installed on your PC, if not you can download it from the Oracle site for example (select your right OS)
 
 https://www.oracle.com/java/technologies/downloads/#jdk23-windows
 
