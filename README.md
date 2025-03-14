@@ -15,7 +15,7 @@ Will setup barracks to work from anywhere within the terminal/cmd.
 
 #### Automatic installation for **Windows**:
 
-1. Download the Windows Barracks zip file.
+1. [Download](https://github.com/NicoloMoretti/barracks/releases/tag/v1.0.0) the Windows Barracks zip file.
 2. Extract the ZIP file. You should see three files inside the extracted folder.
 3. Right-click the 'install.bat' file and select "Run as administrator".
 
@@ -29,7 +29,7 @@ If you see the version of Barracks displayed, it's set up correctly!
 
 #### Automatic installation for **Linux**:
 
-1. Download the Linux Barracks zip file.
+1. [Download](https://github.com/NicoloMoretti/barracks/releases/tag/v1.0.0) the Linux Barracks zip file.
 2. Extract the ZIP file. You should see three files inside the extracted folder.
 3. Open a terminal in the extracted folder:
   - Right-click an empty space in the folder.
