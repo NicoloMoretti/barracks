@@ -157,9 +157,9 @@ Standard operators precedence is applied.
 
 Notice: the division operator '/' defaults to truncated integer division. Example: 8/7 results in 0.
 
-It previously used to be "z/" in .per, but since rounding division was bugged and inconsistent compared to most other programming language, I decided to default to truncated division.
+It previously used to be "z/" in .per, but since rounding division was buggy and inconsistent compared to most other programming language, I decided to default to truncated division.
 
-If you still wish to round you can use the additional operator '\~/' which applies the bugged default .per division. Example: 8~/7 results in 1.
+If you still wish to round you can use the additional operator '\~/' which applies the buggy default .per division. Example: 8~/7 results in 1.
 
 
 ## Saving and reading values from memory
