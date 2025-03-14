@@ -1052,21 +1052,21 @@ Let's define a new custom function, which is a bit like a custom command made ou
 
 ```text
 
-func void updateGathererPercentages(int food, int wood, int gold, int stone) (
-  sn-food-gatherer-percentage := food
-  sn-wood-gatherer-percentage := wood
-  sn-gold-gatherer-percentage := gold
-  sn-stone-gatherer-percentage := stone
+func void updateGathererPercentagesFWGS(int foodPercent, int woodPercent, int goldPercent, int stonePercent) (
+  sn-food-gatherer-percentage := foodPercent
+  sn-wood-gatherer-percentage := woodPercent
+  sn-gold-gatherer-percentage := goldPercent
+  sn-stone-gatherer-percentage := stonePercent
 )
 
 ```
 
-If we wanted to use our new function we could do:
+If we wanted to use our new function we would do:
 
 ```text
 
 (
-  updateGathererPercentages(50, 30, 10, 10)
+  updateGathererPercentagesFWGS(50, 30, 10, 10)
 )
 
 ```
