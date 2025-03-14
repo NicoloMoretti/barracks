@@ -989,6 +989,7 @@ Commands still work mostly the same as .per.
 
   For example here we save the calculated point after adding an offset to it, and we can still use both point1 and point2 for further computations without needing to save them in temporary goals.
 
+
   Since commands resolves to values, they can be nested inside each other to act as parameters of other commands if desired.
 
 
