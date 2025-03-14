@@ -457,24 +457,24 @@ All control structures, including 'if' 'else' and 'blocks' (and 'elif' and 'whil
 (if
     ; condition 1
 =>
+    ; 
     ; some code that depends on condition1
-    ;
     ;
     (if
         ; condition 2
     =>
+        ; 
         ; some code that depends on condition 1 AND condition 2
         ;
-        ;
     )
+    ; 
     ; some code that depends on condition 1
-    ;
     ;
     (if
         ; condition3
     =>
+        ; 
         ; some code that depends on condition 1 AND condition 3
-        ;
         ;
     )
 )
