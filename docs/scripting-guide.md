@@ -1305,7 +1305,13 @@ Search states don't need to be declared anymore, and they are pre-declared read-
 In an attempt to standardize things used often, they have been called:
 
 
-search-local-total, search-local-last, search-remote-total, search-remote-last
+<mark>search-local-total</mark>
+
+<mark>search-local-last</mark>
+
+<mark>search-remote-total</mark>
+
+<mark>search-remote-last</mark>
 
 
 You will always find them updated when reading them, removing the command '(up-get-search-state)'.
