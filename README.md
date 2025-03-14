@@ -13,7 +13,24 @@ The compiler is essentially a Java application, which can be downloaded directly
 There isn't a graphic interface, you are supposed to interact with it through the terminal, by executing it with a '.brk' file path as an argument.
 A '.per' will be generated in the same location as the '.brk' file, or eventual errors will be reported within the terminal.
 
-To make it easier to use, I suggest to download the 'barracks' shell script as well, keep it next to the Java application, and launch that instead by simply typing 'barracks' in the folder where both files are contained.
+### Instructions:
+
+For easy use, I suggest:
+
+For **Windows**:
+Download the .jar file.
+Downalod the 'barrack.bat' file as well.
+
+For **Linux**:
+Download the .jar file.
+Downalod the 'barracks' bash file as well.
+
+Run:
+
+sudo mv ./barracks.jar /usr/bin/barracks.jar
+sudo mv ./barracks /usr/bin/barracks
+
+to download the 'barracks' shell script as well, keep it next to the Java application, and launch that instead by simply typing 'barracks' in the folder where both files are contained.
 Finally, to make it possible to launch barracks from wherever in your system, indipendently of it's storage location, I would suggest to put both the 'barracks' shell script and the Java file in a directory that your PC recognizes as under 'PATH'.
 
 ## Getting started
