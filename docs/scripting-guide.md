@@ -925,7 +925,7 @@ For example, this.per:
 
 (or
   cond 1
-  (
+  (or
     cond 2
     (or
       cond 3
