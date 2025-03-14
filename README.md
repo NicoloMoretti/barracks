@@ -71,9 +71,9 @@ With your terminal open, write 'barracks' followed by a space, and then the path
 
 A '.per' file (and a '.ai' file) will be generated in the same location as the '.brk' file, or eventual errors will be reported within the terminal.
 
-Remember you can use the arrow keys to browse previously typed commands if you want to recompile your script again.
+Remember you can use the arrow keys to browse previously typed commands if you want to recompile your script again, and 'tab' to autocomplete words in the terminal.
 
-Also notice that if you use Visual Studio Code for example, it comes with an integrated terminal window.
+Also note that if you use Visual Studio Code, for example, it comes with an integrated terminal window.
 
 
 To learn how to code in Barracks you can read the [documentation](docs/scripting-guide.md) available under /docs/.
