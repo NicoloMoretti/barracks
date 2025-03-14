@@ -13,6 +13,9 @@
 > Whenever you think you are seeing real 'Barracks' code in the documentation, you can easily copy it and try it yourself, if you have Barracks set up.
 > But remember to both *save* and *recompile*, or you will run the old script again!
 
+> [!NOTE]  
+> Most examples here don't have 'disable-self' for simplicity's sake, that means you gotta have your finger ready and press F3 (or your pause button) pretty quick, or ignore printed outputs after the first script-pass.
+
 > [!WARNING]  
 > Compiling a '.brk' (Barracks extension) will generate a '.per' file with the same name as the '.brk' one. Make sure you don't have any other '.per' file with the same name as the '.brk' you are compiling, or it will be permanently overwritten!
 
@@ -1000,6 +1003,8 @@ Commands still work mostly the same as .per.
 (
   (up-chat-data-to-self "This is my military population : %d !" (up-get-fact military-population) )
 )
+
+; delete your scout and see it goes from 1 -> 0 !
 
 ```
 
