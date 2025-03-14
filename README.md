@@ -20,7 +20,7 @@ A '.per' will be generated in the same location as the '.brk' file, or eventual 
 1. Downalod "Barracks_installation_Linux.zip"
 2. Unzip it, go inside the extracted folder, you should see three files
 3. Right click an empty space in the folder, from the drop down menu select "Open in Terminal"
-4. Copy past this command and hit enter:
+4. Copy paste this command in the terminal and hit enter:
 
 ```text
 chmod +x install.sh
