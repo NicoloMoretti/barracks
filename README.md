@@ -9,9 +9,7 @@ Code written in Barracks is automatically compiled down to .per files through th
 
 ## How to install it
 
-The compiler is essentially a Java application, which can be downloaded directly (or compiled from source if preferred).
 
-The automatic installation is just to automatically place the .jar file somewhere under PATH, with an additional script to make calling barracks from the console cleaner than doing "java -jar barracks.jar".
 There isn't a graphic interface, you are supposed to interact with it through the terminal, by executing it with a '.brk' file path as an argument.
 
 A '.per' file (and a '.ai' file) will be generated in the same location as the '.brk' file, or eventual errors will be reported within the terminal.
@@ -57,13 +55,13 @@ barracks --version
 If you see the version of Barracks displayed, it's set up correctly!
 
 
-### Manual installation instructions:
+#### Manual installation instructions:
 
-To launch it, you should have an up to date Java version installed on your PC, if not you can download it from the Oracle site for example (select your right OS)
+The compiler is essentially a Java application, which can be downloaded directly (or compiled from source if preferred).
 
-https://www.oracle.com/java/technologies/downloads/#jdk23-windows
+The automatic installation is just to automatically place the .jar file somewhere under PATH, with an additional script to make calling barracks from the console cleaner than doing "java -jar barracks.jar".
 
-If you already have Java, once you download the barracks.jar file, that's already enough to use the compiler. Just launch it through the terminal/cmd by doing "java -jar barracks.jar" in the folder with barracks.jar in.
+You are free to set up things in a different way.
 
 However, that would be a bit inconvenient because you would have to type in a long command (java -jar barracks.jar), so I made a support bat/sh file to launch instead, that will in turn call the .jar for you, you just need to type "bar", press 'tab' on your keyboard, and your system will most likely autocomplete the command for you.
 
