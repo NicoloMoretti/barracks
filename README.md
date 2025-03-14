@@ -78,3 +78,4 @@ If you see the version of Barracks displayed, it's set up correctly!
 ## Getting started
 
 To learn how to use Barracks you can consult the documentation available under docs.
+[Guide](docs/scripting-guide.md)
