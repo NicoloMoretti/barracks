@@ -1190,9 +1190,13 @@ func int factorial(int n) (
     return 0
 )
 
+(
+    (up-chat-data-to-self "° %d" factorial(10))
+)
+
 ```
 
-This is possible because a function call is not simply a jump to a zone of code, but it's more akin to executing a new sub-program, which has it's own memory and execution state.
+This is possible because a function call is not simply a jump to a zone of code, but it's more akin to executing a new sub-program, which has it's own local memory variables and execution state.
 
 
 > [!WARNING]  
