@@ -11,12 +11,16 @@
 
 > [!TIP]  
 > Whenever you think you are seeing real 'Barracks' code in the documentation, you can easily copy it and try it yourself, if you have Barracks set up.
+> But remember to both *save* and *recompile*, or you will run the old script again!
 
 > [!WARNING]  
 > Compiling a '.brk' (Barracks extension) will generate a '.per' file with the same name as the '.brk' one. Make sure you don't have any other '.per' file with the same name as the '.brk' you are compiling, or it will be permanently overwritten!
 
 > [!TIP]  
 > Rules split automatically if too long.
+
+> [!NOTE]  
+> Barracks generates ~12 defrules by default to save on rulespace later, don't worry if an "empty" file compiles down to a bunch of defrules.
 
 # Getting started
 
@@ -394,10 +398,10 @@ If the conditions was true, the 'else' body would be skipped.
 (if
   true
 =>
-  (chat-to-all "the condition was true")
+  (chat-to-all "The condition was true")
 )
 (else
-  (chat-to-all "the condition was false")
+  (chat-to-all "The condition was false")
 )
 
 ; prints "the condition was true"
@@ -405,13 +409,13 @@ If the conditions was true, the 'else' body would be skipped.
 (if
   false
 =>
-  (chat-to-all "the condition was true")
+  (chat-to-all "The condition was true!!")
 )
 (else
-  (chat-to-all "the condition was false")
+  (chat-to-all "The condition was false!!")
 )
 
-; prints "the condition was false"
+; prints "the condition was false!!"
 
 ```
 
