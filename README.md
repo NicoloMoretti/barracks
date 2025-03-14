@@ -22,7 +22,7 @@ A '.per' will be generated in the same location as the '.brk' file, or eventual 
 3. Open a terminal in the extracted folder:
   - Right-click an empty space in the folder.
   - Select "Open in Terminal" from the dropdown menu.
-5. Run the following commands in the terminal:
+4. Run the following commands in the terminal:
 
 ```text
 chmod +x install.sh
