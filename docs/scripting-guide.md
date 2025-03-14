@@ -751,7 +751,7 @@ However since local variables don't exist anymore outside their scope, you can r
 
 The programming advice is that variables should exist for as short as possible and close to where they are used, and made global only if they are used to store data through multiple script passes or all around the code.
 
-In this way you will not be greeted with a (too) huge wall of text of variables declrations when you open a .brk file, and it will be easier to track what a variable is for.
+In this way you will not be greeted with a (too) huge wall of text of variables declarations when you open a .brk file, and it will be easier to track what a variable is for. Furthermore, when you modify logic related to a local variable, you don't need to check that it's not used for other purposes too somewhere else in the code.
 
 
 ### Shadowing
