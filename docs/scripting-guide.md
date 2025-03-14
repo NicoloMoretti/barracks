@@ -343,7 +343,7 @@ Constants are **immutable**, read-only integers or strings of text, depending on
 
 #### true/false values note
 
-Notice that until now we wrote (true) in the condition, but we could have also wrote 'true' without '()', as true/false are considered primitive values, just like the number (3) resolves to 3.
+Note that until now we wrote (true) in the condition, but we could have also wrote 'true' without '()', as true/false are considered primitive values, just like the number (3) resolves to 3.
 
 I might also get to add proper boolean variables eventualy.
 
