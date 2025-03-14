@@ -1089,13 +1089,17 @@ Let's take a closer look to the definition syntax:
 
 The keyword "func" denotes the start of a function definition, the second word is the return type of the function, if it had been 'int' it would have meant that the function would have returned/resolved to a value, 'void' means that it doesn't return a number or anything really.
 
-Then, after the return type, we must specify the name of the new function, followed by '(', some *facultative* parameters, and a closing ')'. then we open a new '(' and define the actual body of the function, what it has to do when called, and when we are done we close it with a ')'.
+Then, after the return type, we must specify the name of the new function, followed by '(', some parameters we want our function to ask for when called, and a closing ')'. 
+
+Then we open a new '(' and define the actual body of the function, what it has to do when called, and when we are done we close it with a ')'.
 
 
-We can define a function that takes any amount of parameters, 0, 1, 2, etc..., we must specify a type for each parameter and name to reference it when we write the body of the function.
+We can define a function that takes any amount of parameters, 0, 1, 2, etc..., we must specify a type for each parameter and a name to reference it when we write the body of the function.
 
 
 The parameters will be properly defined local variables inside the function, which will shadow eventual variables of the same name in the scope that the function has been called in, meaning we don't have to worry about conflicting naming when we call functions.
+
+Functions can access global variables.
 
 
 > [!TIP]  
