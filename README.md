@@ -43,7 +43,7 @@ barracks --version
 
 If you see the version of Barracks displayed, it's set up correctly!
 
-However you would need to have both files wherever you plan to save script/launch your CMD from, so I would suggest you to geth them under PATH somehow, if you feel spartan just drop them in System32.
+However, like this you will need to have both files wherever you plan to save script/launch your CMD from, so I would suggest you to get them under PATH somehow. If you feel spartan just drop them in System32 and that will suffice.
 
 After you are done try again:
 
