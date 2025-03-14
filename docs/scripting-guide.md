@@ -1274,7 +1274,7 @@ all commands that accept such type of parameter
 
 ```
 
-'param' varaibles must be initialized when defined to make clear what parameter class they will contain.
+*As of now*, parameter aliases must be initialized when defined to make clear what parameter class they will contain.
 
 
 *As of now*, parameter aliases can only be declared and changed in the global scope (a 'load-if' is a conditionally loaded region of global scope, so it counts as allowed). 
