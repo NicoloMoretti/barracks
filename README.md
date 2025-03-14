@@ -77,6 +77,6 @@ If you see the version of Barracks displayed, it's set up correctly!
 
 ## Getting started
 
-Once you create a file with a .brk file extension and you have the compiler installed, you just need to open a terminal window and launch barracks with your .brk file path as argument.
+Once you create a file with a .brk file extension, and you have the compiler installed, you just need to open a terminal window and launch barracks with your .brk file path as argument.
 
 To learn how to code in Barracks you can consult the [documentation](docs/scripting-guide.md) available under /docs/.
