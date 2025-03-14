@@ -18,9 +18,9 @@ A '.per' will be generated in the same location as the '.brk' file, or eventual 
 For easy use, I suggest:
 
 #### For **Windows**:
-Download the .jar file.
+1. Download the .jar file.
 
-Downalod the 'barrack.bat' file as well.
+2. Downalod the 'barrack.bat' file as well.
 
 To check if it worked, type in the terminal:
 
@@ -31,11 +31,11 @@ barracks --version
 If you see the version of barracks, it's set up correctly!
 
 #### For **Linux**:
-Download the .jar file.
+1. Download the .jar file.
 
-Downalod the 'barracks' bash file as well.
+2. Downalod the 'barracks' bash file as well.
 
-Run:
+3. Run:
 ```text
 sudo mv ./barracks.jar /usr/bin/barracks.jar
 sudo mv ./barracks /usr/bin/barracks
