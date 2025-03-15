@@ -75,7 +75,7 @@ Windows absolute path:
 
 <img src="https://github.com/user-attachments/assets/6e1e76a4-cf63-41ce-86b0-d29e91dc5e3e" width="45%" />
 
-Windows relative path:
+Windows relative path: (notice that since I'm already in the Downloads folder, I can skip the path up to there)
 
 <img src="https://github.com/user-attachments/assets/734c1e16-cc73-489e-b6c2-66305d4fc63e" width="40%" />
 
