@@ -1322,10 +1322,8 @@ In an attempt to standardize things used often, they have been called:
 
 <mark>search-remote-last</mark>
 
-
-You will always find them updated to the last search when reading them, removing the command '(up-get-search-state)'.
-
-If you wish to save a previous search state value before a new search, copy the value of the search state you want into a support variable.
+> [!IMPORTANT] 
+> You will **still** need to update them with the *new* command '<mark>(update-search-state)</mark>', which takes no parameters.
 
 
 ## AIs communicating together
@@ -1379,7 +1377,7 @@ up-jump-rule
 
 xs-script-call (might return if I don't find a better way to use it)
 
-up-get-search-state
+up-get-search-state  -> use <mark>(update-search-state)</mark> instead
 
 
 ## Commands not currently planned to be added
