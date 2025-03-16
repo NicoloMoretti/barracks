@@ -1323,7 +1323,7 @@ In an attempt to standardize things used often, they have been called:
 <mark>search-remote-last</mark>
 
 > [!IMPORTANT] 
-> You will **still** need to update them with the *new* command '<mark>(update-search-state)</mark>', which takes no parameters.
+> You will **still** need to update them with the *new* command '<mark>(update-search-state)</mark>', which takes no parameters in.
 
 
 ## AIs communicating together
