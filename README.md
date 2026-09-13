@@ -97,3 +97,11 @@ Also note that if you use Visual Studio Code, for example, it comes with an inte
 
 ### Scripting guide
 To learn how to code in Barracks you can read the [scripting guide](docs/scripting-guide.md) available under /docs/.
+
+
+## Acknowledgements
+
+* **[AoE2 AI Scripting Encyclopedia](https://airef.github.io/):** Big thanks to **Leif Ericson** for documenting and organizing the commands and parameters, which provided the foundational command data used by Barracks.
+* **Ensemble Studios** for the original CPSB guide.
+* **scripter64** for the monumental work on UserPatch and documentation notes.
+* **II2N (The Max)**, **ER**, and the AoE2 scripting community for years of shared research and notes.
